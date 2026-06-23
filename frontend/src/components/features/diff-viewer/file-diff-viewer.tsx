@@ -1,4 +1,4 @@
-import { DiffEditor, Editor, Monaco } from "@monaco-editor/react";
+import { DiffEditor, Editor, Monaco, useMonaco } from "@monaco-editor/react";
 import React from "react";
 import { editor as editor_t } from "monaco-editor";
 import {
@@ -18,6 +18,10 @@ import { useUnifiedGitDiff } from "#/hooks/query/use-unified-git-diff";
 import { MarkdownRenderer } from "#/components/features/markdown/markdown-renderer";
 import { Typography } from "#/ui/typography";
 import { LoadingSpinner } from "./loading-spinner";
+import {
+  monacoThemeFromLbTokens,
+  onLbThemeChange,
+} from "#/utils/lb-editor-theme";
 import { EditorContainer } from "./editor-container";
 
 type ViewMode = "diff" | "old" | "new";
@@ -46,16 +50,21 @@ const STATUS_MAP: Record<GitChangeStatus, string | IconType> = {
 };
 
 const beforeMount = (monaco: Monaco) => {
+  // LeapBuilder KI-002 — derive the editor theme from --lb-* CSS variables
+  // so Monaco tracks the LB theme picker. defineTheme is idempotent — safe
+  // to re-register on every editor mount.
+  const lbTheme = monacoThemeFromLbTokens();
   monaco.editor.defineTheme("custom-diff-theme", {
-    base: "vs-dark",
-    inherit: true,
+    ...lbTheme,
     rules: [
+      ...lbTheme.rules,
       { token: "comment", foreground: "6a9955" },
       { token: "keyword", foreground: "569cd6" },
       { token: "string", foreground: "ce9178" },
       { token: "number", foreground: "b5cea8" },
     ],
     colors: {
+      ...lbTheme.colors,
       "diffEditor.insertedTextBackground": "#014b01AA",
       "diffEditor.removedTextBackground": "#750000AA",
       "diffEditor.insertedLineBackground": "#003f00AA",
@@ -78,6 +87,17 @@ export function FileDiffViewer({ path, type }: FileDiffViewerProps) {
   const [viewMode, setViewMode] = React.useState<ViewMode>("diff");
   const diffEditorRef = React.useRef<editor_t.IStandaloneDiffEditor>(null);
   const singleEditorRef = React.useRef<editor_t.IStandaloneCodeEditor>(null);
+
+  // LeapBuilder KI-002 — re-define the Monaco theme when the LB theme switches
+  // so an open editor doesn't get stranded on the prior theme's colors.
+  const monaco = useMonaco();
+  React.useEffect(() => {
+    if (!monaco) return undefined;
+    return onLbThemeChange(() => {
+      beforeMount(monaco);
+      monaco.editor.setTheme("custom-diff-theme");
+    });
+  }, [monaco]);
 
   const isAdded = type === "A" || type === "U";
   const isDeleted = type === "D";

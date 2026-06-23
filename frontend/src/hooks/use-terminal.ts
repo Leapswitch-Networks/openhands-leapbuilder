@@ -3,6 +3,10 @@ import { Terminal } from "@xterm/xterm";
 import React from "react";
 import { Command, useCommandStore } from "#/stores/command-store";
 import { parseTerminalOutput } from "#/utils/parse-terminal-output";
+import {
+  xtermThemeFromLbTokens,
+  onLbThemeChange,
+} from "#/utils/lb-editor-theme";
 
 /*
   NOTE: Tests for this hook are indirectly covered by the tests for the XTermTerminal component.
@@ -90,9 +94,9 @@ export const useTerminal = () => {
       scrollSensitivity: 1,
       fastScrollSensitivity: 5,
       disableStdin: true, // Make terminal read-only
-      theme: {
-        background: "#25272D",
-      },
+      // LeapBuilder KI-002 — theme derived from --lb-* CSS variables so the
+      // terminal tracks the LB theme picker (instead of a hardcoded dark).
+      theme: xtermThemeFromLbTokens(),
     });
 
   const fitTerminalSafely = React.useCallback(() => {
@@ -145,6 +149,16 @@ export const useTerminal = () => {
       terminal.current?.dispose();
       lastCommandIndex.current = 0;
     };
+  }, []);
+
+  // LeapBuilder KI-002 — re-apply xterm theme when the LB theme switches.
+  React.useEffect(() => {
+    const cleanup = onLbThemeChange(() => {
+      if (terminal.current && !isDisposed.current) {
+        terminal.current.options.theme = xtermThemeFromLbTokens();
+      }
+    });
+    return cleanup;
   }, []);
 
   React.useEffect(() => {

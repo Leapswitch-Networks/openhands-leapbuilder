@@ -1,3 +1,7 @@
+// LeapBuilder M11 — sidebar override.
+// Adds two admin-gated top-level entries (Users + Roles) right under
+// the New Project button. Everything else is the upstream layout.
+
 import React from "react";
 import { useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
@@ -16,6 +20,7 @@ import { displayErrorToast } from "#/utils/custom-toast-handlers";
 import { I18nKey } from "#/i18n/declaration";
 import { cn } from "#/utils/utils";
 import { ENABLE_AUTOMATIONS } from "#/utils/feature-flags";
+import { LbAdminSidebarButtons } from "./lb-admin-buttons";
 
 export function Sidebar() {
   const { t } = useTranslation();
@@ -42,8 +47,6 @@ export function Sidebar() {
       settingsIsError &&
       settingsError?.status !== 404
     ) {
-      // We don't show toast errors for settings in the global error handler
-      // because we have a special case for 404 errors
       displayErrorToast(
         "Something went wrong while fetching settings. Please reload the page.",
       );
@@ -94,6 +97,8 @@ export function Sidebar() {
                 disabled={settings?.email_verified === false}
               />
             )}
+            {/* LeapBuilder M11 — admin-only top-level entries */}
+            <LbAdminSidebarButtons />
           </div>
 
           <div className="flex flex-row md:flex-col md:items-center gap-[26px]">

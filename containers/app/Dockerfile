@@ -30,6 +30,15 @@ COPY pyproject.toml poetry.lock ./
 RUN touch README.md
 RUN export POETRY_CACHE_DIR && poetry install --no-root && rm -rf $POETRY_CACHE_DIR
 
+# LeapBuilder (KI-004) — set LB_INSTALL_DEV=1 at build time to add the
+# dev-only LLM providers (currently: claude-code-sdk). Off by default
+# so staging/prod images stay lean. pip-installed alongside Poetry's
+# venv to sidestep the lock-file regen requirement.
+ARG LB_INSTALL_DEV=0
+RUN if [ "$LB_INSTALL_DEV" = "1" ]; then \
+      poetry run pip install --no-cache-dir claude-code-sdk; \
+    fi
+
 FROM base AS openhands-app
 
 WORKDIR /app

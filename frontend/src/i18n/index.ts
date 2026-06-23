@@ -26,8 +26,18 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    // LeapBuilder: English is the hard default. Upstream let the browser's
+    // navigator language win on first visit, which surprised users in
+    // non-English locales. We restrict detection to explicit user choice
+    // (querystring / cookie / localStorage); anything else falls back to "en".
     fallbackLng: "en",
+    lng: "en",
     debug: import.meta.env.NODE_ENV === "development",
+
+    detection: {
+      order: ["querystring", "cookie", "localStorage"],
+      caches: ["localStorage", "cookie"],
+    },
 
     // Define supported languages explicitly to prevent 404 errors
     // According to i18next documentation, this is the recommended way to prevent

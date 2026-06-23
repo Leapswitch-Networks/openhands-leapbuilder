@@ -1,6 +1,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { IoLogOutOutline, IoPersonAddOutline } from "react-icons/io5";
+import {
+  IoLogOutOutline,
+  IoPersonAddOutline,
+  IoPersonCircleOutline,
+} from "react-icons/io5";
+import { NavLink } from "react-router";
 import { useLogout } from "#/hooks/mutation/use-logout";
 import { OrganizationUserRole } from "#/types/org";
 import { useOrgTypeAndAccess } from "#/hooks/use-org-type-and-access";
@@ -8,7 +13,6 @@ import { cn } from "#/utils/utils";
 import { OrgSelector } from "../org/org-selector";
 import { I18nKey } from "#/i18n/declaration";
 import { useSettingsNavItems } from "#/hooks/use-settings-nav-items";
-import DocumentIcon from "#/icons/document.svg?react";
 import { ContextMenuListItem } from "../context-menu/context-menu-list-item";
 import { ContextMenuContainer } from "../context-menu/context-menu-container";
 import { ContextMenuCTA } from "../context-menu/context-menu-cta";
@@ -62,8 +66,15 @@ export function UserContextMenu({
   const isCTAEnabled = isEnterpriseCloud && !isMobile;
 
   const handleLogout = () => {
-    logout();
+    // LeapBuilder always runs behind oauth2-proxy (or its dev
+    // stand-in). The proxy cookie is the meaningful session — clearing
+    // it via /oauth2/sign_out is the real logout. Skip the internal
+    // logout mutation entirely: its onSuccess fires
+    // window.location.reload() which races our location.assign() to
+    // /oauth2/sign_out and cancels the navigation. Just navigate.
     onClose();
+    window.location.href =
+      `/oauth2/sign_out?rd=${encodeURIComponent(window.location.origin + "/")}`;
   };
 
   const handleInviteMemberClick = () => {
@@ -142,27 +153,28 @@ export function UserContextMenu({
 
           <SettingsNavDivider className="my-1.5" />
 
-          <a
-            href="https://docs.openhands.dev"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* LeapBuilder: replaced upstream's Documentation link with
+              a Profile entry pointing at our /profile page (avatar +
+              name + email + github login). Per-user preferences still
+              live under /settings — linked from /profile itself. */}
+          <NavLink
+            to="/profile"
             onClick={onClose}
             className="flex items-center gap-2 p-2 cursor-pointer hover:bg-white/10 hover:text-white rounded w-full text-xs"
           >
-            <DocumentIcon className="text-white" width={16} height={16} />
-            {t(I18nKey.SIDEBAR$DOCS)}
-          </a>
+            <IoPersonCircleOutline className="text-white" size={16} />
+            Profile
+          </NavLink>
 
-          {/* Only show logout in saas mode - oss mode has no session to invalidate */}
-          {isSaas && (
-            <ContextMenuListItem
-              onClick={handleLogout}
-              className={contextMenuListItemClassName}
-            >
-              <IoLogOutOutline className="text-white" size={16} />
-              {t(I18nKey.ACCOUNT_SETTINGS$LOGOUT)}
-            </ContextMenuListItem>
-          )}
+          {/* Logout — visible in both modes. LeapBuilder OSS runs behind
+              oauth2-proxy, which keeps a cookie that needs explicit clearing. */}
+          <ContextMenuListItem
+            onClick={handleLogout}
+            className={contextMenuListItemClassName}
+          >
+            <IoLogOutOutline className="text-white" size={16} />
+            {t(I18nKey.ACCOUNT_SETTINGS$LOGOUT)}
+          </ContextMenuListItem>
         </div>
       </div>
 

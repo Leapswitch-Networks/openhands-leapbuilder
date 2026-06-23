@@ -19,6 +19,10 @@ from openhands.app_server.settings.settings_router import (
 )
 from openhands.app_server.user import skills_router, user_router
 from openhands.app_server.web_client import web_client_router
+# LeapBuilder M9 — admin/diagnostics endpoints
+from openhands.app_server.leapbuilder.lb_router import (
+    router as lb_router,
+)
 
 # Include routers
 router = APIRouter(prefix='/api/v1')
@@ -35,3 +39,4 @@ router.include_router(webhook_router.router)
 router.include_router(web_client_router.router)
 router.include_router(git_router)
 router.include_router(config_router)
+router.include_router(lb_router)

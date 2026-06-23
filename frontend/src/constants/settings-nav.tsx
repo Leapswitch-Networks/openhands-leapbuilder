@@ -121,6 +121,18 @@ export const SAAS_NAV_ITEMS: SettingsNavItem[] = [
     text: "SETTINGS$NAV_SKILLS",
     section: "other",
   },
+  {
+    icon: <LightbulbIcon width={22} height={22} />,
+    to: "/settings/themes",
+    text: "SETTINGS$NAV_THEMES",
+    section: "other",
+  },
+  {
+    icon: <LightbulbIcon width={22} height={22} />,
+    to: "/settings/sync",
+    text: "SETTINGS$NAV_SYNC",
+    section: "other",
+  },
 ];
 
 export const OSS_NAV_ITEMS: SettingsNavItem[] = [
@@ -148,6 +160,16 @@ export const OSS_NAV_ITEMS: SettingsNavItem[] = [
     icon: <LightbulbIcon width={22} height={22} />,
     to: "/settings/skills",
     text: "SETTINGS$NAV_SKILLS",
+  },
+  {
+    icon: <LightbulbIcon width={22} height={22} />,
+    to: "/settings/themes",
+    text: "SETTINGS$NAV_THEMES",
+  },
+  {
+    icon: <LightbulbIcon width={22} height={22} />,
+    to: "/settings/sync",
+    text: "SETTINGS$NAV_SYNC",
   },
   {
     icon: <PuzzlePieceIcon width={22} height={22} />,

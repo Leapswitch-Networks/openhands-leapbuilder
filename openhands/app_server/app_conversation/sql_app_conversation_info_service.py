@@ -31,6 +31,7 @@ from sqlalchemy import (
     Select,
     String,
     func,
+    or_,
     select,
 )
 from sqlalchemy.engine import CursorResult
@@ -110,6 +111,12 @@ class StoredConversationMetadata(Base):
         String, nullable=True, index=True
     )
     public: Mapped[bool | None] = mapped_column(nullable=True, index=True)
+
+    # LeapBuilder M9.3b — owner identity from oauth2-proxy / OAuth2ProxyUserAuth.
+    # Nullable for pre-M9.3b rows and DefaultUserAuth (single-tenant) installs.
+    created_by_user_id: Mapped[str | None] = mapped_column(
+        String, nullable=True, index=True
+    )
 
     # Tags for conversation metadata (e.g., automation context, skills used)
     tags: Mapped[dict[str, str] | None] = mapped_column(
@@ -350,6 +357,10 @@ class SQLAppConversationInfoService(AppConversationInfoService):
         metrics = info.metrics or MetricsSnapshot()
         usage = metrics.accumulated_token_usage or TokenUsage()
 
+        # LeapBuilder M9.3b — stamp owner so the list filter can scope reads.
+        # None under DefaultUserAuth (single-tenant) is intentional.
+        owner_user_id = await self.user_context.get_user_id()
+
         stored = StoredConversationMetadata(
             conversation_id=str(info.id),
             selected_repository=info.selected_repository,
@@ -380,6 +391,7 @@ class SQLAppConversationInfoService(AppConversationInfoService):
                 else None
             ),
             public=info.public,
+            created_by_user_id=owner_user_id,
             tags=info.tags if info.tags else None,
         )
 
@@ -515,6 +527,19 @@ class SQLAppConversationInfoService(AppConversationInfoService):
         query = select(StoredConversationMetadata).where(
             StoredConversationMetadata.conversation_version == 'V1'
         )
+        # LeapBuilder M9.3b — filter by current user when per-user identity
+        # is in play. user_id is None under DefaultUserAuth (single-tenant)
+        # and on pre-M9.3 rows, so we leave those visible to everyone to
+        # preserve OSS-default semantics. With OAuth2ProxyUserAuth (M9.3),
+        # user_id is the authenticated email and conversations get scoped.
+        user_id = await self.user_context.get_user_id()
+        if user_id is not None:
+            query = query.where(
+                or_(
+                    StoredConversationMetadata.created_by_user_id == user_id,
+                    StoredConversationMetadata.created_by_user_id.is_(None),
+                )
+            )
         return query
 
     def _to_info(
