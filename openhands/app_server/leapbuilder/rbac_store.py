@@ -127,9 +127,7 @@ async def upsert_user(
     return user
 
 
-async def get_user_by_email(
-    session: AsyncSession, email: str
-) -> UserView | None:
+async def get_user_by_email(session: AsyncSession, email: str) -> UserView | None:
     result = await session.execute(
         select(LbUser, LbRole)
         .join(LbUserRole, LbUserRole.user_id == LbUser.id, isouter=True)
@@ -162,8 +160,6 @@ async def list_users(session: AsyncSession) -> list[UserView]:
     )
     by_user: dict[str, UserView] = {}
     for u, r in result.all():
-        if u is None:
-            continue
         view = by_user.get(u.id)
         if view is None:
             view = UserView(
@@ -295,9 +291,7 @@ async def remove_role(
             session, excluding_user_id=user.id
         )
         if remaining == 0:
-            raise MinSuperAdminViolation(
-                'at least one enabled super_admin must remain'
-            )
+            raise MinSuperAdminViolation('at least one enabled super_admin must remain')
 
     await session.execute(
         delete(LbUserRole)
@@ -315,8 +309,7 @@ async def remove_role(
 
 async def list_roles(session: AsyncSession) -> list[RoleView]:
     result = await session.execute(
-        select(LbRole, LbRolePermission)
-        .join(
+        select(LbRole, LbRolePermission).join(
             LbRolePermission, LbRolePermission.role_id == LbRole.id, isouter=True
         )
     )
@@ -413,9 +406,7 @@ async def update_role(
         p.permission
         for p in (
             await session.execute(
-                select(LbRolePermission).where(
-                    LbRolePermission.role_id == role.id
-                )
+                select(LbRolePermission).where(LbRolePermission.role_id == role.id)
             )
         ).scalars()
     ]
@@ -441,9 +432,7 @@ async def delete_role(session: AsyncSession, *, role_id: str) -> None:
             f'role {role.name!r} is a system role and cannot be deleted'
         )
     # Detach from any users first (ondelete=RESTRICT on the FK).
-    await session.execute(
-        delete(LbUserRole).where(LbUserRole.role_id == role_id)
-    )
+    await session.execute(delete(LbUserRole).where(LbUserRole.role_id == role_id))
     await session.execute(delete(LbRole).where(LbRole.id == role_id))
     await session.flush()
 
@@ -480,16 +469,16 @@ async def set_role_permissions(
 # ---------- Permission checks ----------------------------------------------
 
 
-async def has_permission(
-    session: AsyncSession, *, email: str, permission: str
-) -> bool:
+async def has_permission(session: AsyncSession, *, email: str, permission: str) -> bool:
     """True if the user holds any role granting `permission`, or holds
     the super_admin sys role (which bypasses all checks)."""
     if not email:
         return False
     user = (
         await session.execute(
-            select(LbUser).where(LbUser.email == email).where(LbUser.is_enabled.is_(True))
+            select(LbUser)
+            .where(LbUser.email == email)
+            .where(LbUser.is_enabled.is_(True))
         )
     ).scalar_one_or_none()
     if user is None:
@@ -518,9 +507,7 @@ async def has_permission(
     return granted > 0
 
 
-async def get_user_permissions(
-    session: AsyncSession, email: str
-) -> list[str]:
+async def get_user_permissions(session: AsyncSession, email: str) -> list[str]:
     """Return the union of permission strings granted to this user by all
     their enabled roles. Empty list for anonymous, disabled, or
     unknown users. Super_admin returns []; the caller should branch on
@@ -530,7 +517,9 @@ async def get_user_permissions(
         return []
     user = (
         await session.execute(
-            select(LbUser).where(LbUser.email == email).where(LbUser.is_enabled.is_(True))
+            select(LbUser)
+            .where(LbUser.email == email)
+            .where(LbUser.is_enabled.is_(True))
         )
     ).scalar_one_or_none()
     if user is None:

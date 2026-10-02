@@ -25,6 +25,7 @@ Auth model (M11 v1):
 from __future__ import annotations
 
 import os
+from collections.abc import AsyncGenerator
 
 from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, ConfigDict
@@ -78,7 +79,7 @@ def _current_email(request: Request) -> str | None:
     return None
 
 
-async def _get_session(request: Request) -> AsyncSession:
+async def _get_session(request: Request) -> AsyncGenerator[AsyncSession, None]:
     """Resolve an AsyncSession via the OpenHands global config injector.
 
     Imported lazily — pure-function tests don't have a global config and
@@ -115,9 +116,7 @@ async def _track_user(request: Request, session: AsyncSession) -> str | None:
     if not email:
         return None
     try:
-        await rbac_store.upsert_user(
-            session, email, _current_github_login(request)
-        )
+        await rbac_store.upsert_user(session, email, _current_github_login(request))
         await session.commit()
     except Exception:
         # Best-effort. The endpoint will still run; admin gating will
@@ -126,14 +125,13 @@ async def _track_user(request: Request, session: AsyncSession) -> str | None:
     return email
 
 
-async def _is_env_fallback_admit(
-    session: AsyncSession, email: str
-) -> bool:
+async def _is_env_fallback_admit(session: AsyncSession, email: str) -> bool:
     """True if env LB_ADMIN_EMAILS admits this user AND the DB has zero
     super_admins (unbootstrapped deployment escape hatch)."""
     if email not in _env_admin_emails():
         return False
     from sqlalchemy import func, select
+
     from openhands.app_server.leapbuilder.models import (
         SUPER_ADMIN_ROLE_ID,
         LbUserRole,
@@ -141,9 +139,9 @@ async def _is_env_fallback_admit(
 
     has_any = (
         await session.execute(
-            select(func.count()).select_from(LbUserRole).where(
-                LbUserRole.role_id == SUPER_ADMIN_ROLE_ID
-            )
+            select(func.count())
+            .select_from(LbUserRole)
+            .where(LbUserRole.role_id == SUPER_ADMIN_ROLE_ID)
         )
     ).scalar_one()
     return has_any == 0
@@ -164,9 +162,7 @@ async def _resolve_admin(request: Request, session: AsyncSession) -> str:
     raise HTTPException(status_code=404)
 
 
-async def _require_perm(
-    request: Request, session: AsyncSession, perm: str
-) -> str:
+async def _require_perm(request: Request, session: AsyncSession, perm: str) -> str:
     """Catalog-permission gate. Returns the email if the requester:
       - is super_admin (bypass), OR
       - is env-fallback-admitted (unbootstrapped deployments), OR
@@ -182,9 +178,7 @@ async def _require_perm(
         return email
     if await _is_env_fallback_admit(session, email):
         return email
-    if await rbac_store.has_permission(
-        session, email=email, permission=perm
-    ):
+    if await rbac_store.has_permission(session, email=email, permission=perm):
         return email
     raise HTTPException(status_code=404)
 
@@ -223,9 +217,7 @@ async def get_me(
         }
     is_super = await rbac_store.is_super_admin(session, email)
     env_fallback = await _is_env_fallback_admit(session, email)
-    perms = (
-        [] if is_super else await rbac_store.get_user_permissions(session, email)
-    )
+    perms = [] if is_super else await rbac_store.get_user_permissions(session, email)
     is_admin = is_super or env_fallback or bool(perms)
     return {
         'email': email,
@@ -296,9 +288,7 @@ async def update_role(
     #   - only is_enabled → roles:toggle_status
     #   - anything else  → roles:update
     only_toggles = (
-        body.is_enabled is not None
-        and body.name is None
-        and body.description is None
+        body.is_enabled is not None and body.name is None and body.description is None
     )
     perm = 'roles:toggle_status' if only_toggles else 'roles:update'
     await _require_perm(request, session, perm)

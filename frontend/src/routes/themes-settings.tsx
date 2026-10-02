@@ -1,4 +1,6 @@
 import React from "react";
+import { Trans, useTranslation } from "react-i18next";
+import { I18nKey } from "#/i18n/declaration";
 
 // LeapBuilder M9.1 — in-app theme picker.
 // Themes live in the LeapBuilder overlay at /themes/_themes.json. Selection
@@ -36,7 +38,7 @@ function applyTheme(name: string, kind?: "light" | "dark") {
   // Force a reflow so CSS custom properties / class changes paint
   // immediately rather than at the next idle tick (some Chromium versions
   // batch repaints aggressively when only the html attribute changes).
-  void html.offsetHeight;
+  html.getBoundingClientRect();
 }
 
 function previewSwatchStyle(t: ThemeBundle): React.CSSProperties {
@@ -47,6 +49,7 @@ function previewSwatchStyle(t: ThemeBundle): React.CSSProperties {
 }
 
 function ThemesSettingsScreen() {
+  const { t: tr } = useTranslation();
   const [themes, setThemes] = React.useState<ThemeBundle[] | null>(null);
   const [active, setActive] = React.useState<string>("default");
   const [error, setError] = React.useState<string | null>(null);
@@ -92,28 +95,37 @@ function ThemesSettingsScreen() {
   return (
     <div className="flex flex-col gap-6 p-6 max-w-5xl">
       <header className="flex flex-col gap-2">
-        <h1 className="text-2xl font-semibold">Themes</h1>
+        <h1 className="text-2xl font-semibold">
+          {tr(I18nKey.SETTINGS$NAV_THEMES)}
+        </h1>
         <p className="text-sm opacity-75">
-          Pick a theme for LeapBuilder. Your choice is saved in this browser
-          and applies to every page on reload.
+          {tr(I18nKey.LB_THEMES$DESCRIPTION)}
         </p>
       </header>
 
       {error && (
         <div className="rounded-md border border-[#C63143] bg-[#4A0709]/30 px-4 py-3 text-sm">
-          Failed to load theme list: {error}. Themes are bundled with the
-          overlay — make sure <code>/themes/_themes.json</code> is reachable.
+          <Trans
+            i18nKey={I18nKey.LB_THEMES$LOAD_ERROR}
+            values={{ error }}
+            components={{ code: <code /> }}
+            tOptions={{ interpolation: { escapeValue: false } }}
+          />
         </div>
       )}
 
       {!themes && !error && (
-        <div className="text-sm opacity-75">Loading themes…</div>
+        <div className="text-sm opacity-75">
+          {tr(I18nKey.LB_THEMES$LOADING)}
+        </div>
       )}
 
       {themes && themes.length === 0 && (
         <div className="text-sm opacity-75">
-          No themes installed. Drop a theme bundle into <code>themes/</code>
-          and re-run <code>scripts/themes-build.sh</code>.
+          <Trans
+            i18nKey={I18nKey.LB_THEMES$EMPTY}
+            components={{ code: <code /> }}
+          />
         </div>
       )}
 
@@ -127,12 +139,11 @@ function ThemesSettingsScreen() {
                 key={t.name}
                 onClick={() => handlePick(t.name)}
                 aria-pressed={isActive}
-                className={
-                  "group flex flex-col gap-3 rounded-lg border-2 p-4 text-left transition-colors cursor-pointer " +
-                  (isActive
+                className={`group flex flex-col gap-3 rounded-lg border-2 p-4 text-left transition-colors cursor-pointer ${
+                  isActive
                     ? "border-[#FC6B0E] bg-[#1f1f1f99]"
-                    : "border-[#242424] hover:bg-[#1f1f1f99]")
-                }
+                    : "border-[#242424] hover:bg-[#1f1f1f99]"
+                }`}
               >
                 {/* Preview: SVG if the bundle ships one, otherwise a flat
                     swatch in the theme's base color so the user can tell
@@ -149,7 +160,8 @@ function ThemesSettingsScreen() {
                       loading="lazy"
                       onError={(e) => {
                         // Hide broken images; the parent swatch shows through.
-                        e.currentTarget.style.display = "none";
+                        const img = e.currentTarget;
+                        img.style.display = "none";
                       }}
                     />
                   )}
@@ -165,6 +177,7 @@ function ThemesSettingsScreen() {
                   {t.description}
                 </p>
                 <div className="mt-auto flex items-center justify-between gap-2 pt-2 text-xs">
+                  {/* eslint-disable-next-line i18next/no-literal-string */}
                   <span className="opacity-60">v{t.version ?? "1.0.0"}</span>
                   <span
                     className={
@@ -173,7 +186,9 @@ function ThemesSettingsScreen() {
                         : "opacity-60 group-hover:opacity-100"
                     }
                   >
-                    {isActive ? "active" : "use this"}
+                    {isActive
+                      ? tr(I18nKey.LB_THEMES$ACTIVE)
+                      : tr(I18nKey.LB_THEMES$USE_THIS)}
                   </span>
                 </div>
               </button>
@@ -183,8 +198,10 @@ function ThemesSettingsScreen() {
       )}
 
       <footer className="text-xs opacity-60 pt-4 border-t border-[#242424]">
-        Themes are LeapBuilder plugins. Authoring docs:{" "}
-        <code>docs/features/themes.md</code>.
+        <Trans
+          i18nKey={I18nKey.LB_THEMES$FOOTER}
+          components={{ code: <code /> }}
+        />
       </footer>
     </div>
   );

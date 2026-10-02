@@ -1,4 +1,6 @@
 import React from "react";
+import { Trans, useTranslation } from "react-i18next";
+import { I18nKey } from "#/i18n/declaration";
 
 // LeapBuilder M11 — dev-mode /oauth2/sign_out final page.
 //
@@ -12,6 +14,7 @@ import React from "react";
 // link the user can click when they want to come back.
 
 export default function DevSignOutScreen() {
+  const { t } = useTranslation();
   React.useEffect(() => {
     // Clear browser-side session data. The X-Forwarded-Email header
     // injected by Traefik isn't browser-controlled, so the next request
@@ -34,20 +37,21 @@ export default function DevSignOutScreen() {
     <div className="flex flex-col items-center justify-center min-h-[60vh] gap-6 p-6 text-center max-w-xl mx-auto">
       <div className="text-5xl select-none">👋</div>
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-semibold">You've been signed out</h1>
+        <h1 className="text-2xl font-semibold">
+          {t(I18nKey.LB_DEV_SIGNOUT$TITLE)}
+        </h1>
         <p className="text-sm opacity-75">
-          Your local session was cleared. In <em>dev mode</em> the
-          identity header is injected by Traefik, so the next request
-          will re-authenticate as the configured dev user — there's no
-          way to fully sign out without changing the dev-identity
-          middleware.
+          <Trans
+            i18nKey={I18nKey.LB_DEV_SIGNOUT$BODY}
+            components={{ em: <em /> }}
+          />
         </p>
       </div>
       <a
         href={target}
         className="text-xs px-3 py-1.5 rounded bg-[#FC6B0E] text-[#0D0F11] font-semibold"
       >
-        Sign in again
+        {t(I18nKey.LB_DEV_SIGNOUT$SIGN_IN_AGAIN)}
       </a>
     </div>
   );

@@ -40,12 +40,12 @@ export function UserContextMenu({
   onOpenInviteModal,
 }: UserContextMenuProps) {
   const { t } = useTranslation();
-  const { mutate: logout } = useLogout();
+  useLogout();
   const { isPersonalOrg } = useOrgTypeAndAccess();
   const settingsNavItems = useSettingsNavItems();
   const shouldHideSelector = useShouldHideOrgSelector();
   const isMobile = useBreakpoint(768);
-  const { isSaas, isEnterpriseCloud } = useAppMode();
+  const { isEnterpriseCloud } = useAppMode();
 
   // Keep all nav items including headers and dividers for proper section grouping
   const navItems = settingsNavItems;
@@ -73,8 +73,7 @@ export function UserContextMenu({
     // window.location.reload() which races our location.assign() to
     // /oauth2/sign_out and cancels the navigation. Just navigate.
     onClose();
-    window.location.href =
-      `/oauth2/sign_out?rd=${encodeURIComponent(window.location.origin + "/")}`;
+    window.location.href = `/oauth2/sign_out?rd=${encodeURIComponent(`${window.location.origin}/`)}`;
   };
 
   const handleInviteMemberClick = () => {
@@ -163,7 +162,7 @@ export function UserContextMenu({
             className="flex items-center gap-2 p-2 cursor-pointer hover:bg-white/10 hover:text-white rounded w-full text-xs"
           >
             <IoPersonCircleOutline className="text-white" size={16} />
-            Profile
+            {t(I18nKey.LB_ADMIN$PROFILE)}
           </NavLink>
 
           {/* Logout — visible in both modes. LeapBuilder OSS runs behind

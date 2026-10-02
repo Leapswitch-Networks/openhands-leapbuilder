@@ -7,6 +7,11 @@ from openhands.app_server.event_callback import (
     webhook_router,
 )
 from openhands.app_server.git.git_router import router as git_router
+
+# LeapBuilder M9 — admin/diagnostics endpoints
+from openhands.app_server.leapbuilder.lb_router import (
+    router as lb_router,
+)
 from openhands.app_server.pending_messages.pending_message_router import (
     router as pending_message_router,
 )
@@ -19,10 +24,6 @@ from openhands.app_server.settings.settings_router import (
 )
 from openhands.app_server.user import skills_router, user_router
 from openhands.app_server.web_client import web_client_router
-# LeapBuilder M9 — admin/diagnostics endpoints
-from openhands.app_server.leapbuilder.lb_router import (
-    router as lb_router,
-)
 
 # Include routers
 router = APIRouter(prefix='/api/v1')

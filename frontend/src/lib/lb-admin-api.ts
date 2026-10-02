@@ -39,7 +39,10 @@ export function hasPerm(me: Me | null, perm: string): boolean {
 export const SUPER_ADMIN_ROLE_ID = "00000000-0000-0000-0000-000000000001";
 
 export class ApiError extends Error {
-  constructor(public status: number, message: string) {
+  constructor(
+    public status: number,
+    message: string,
+  ) {
     super(message);
   }
 }

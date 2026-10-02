@@ -13,12 +13,12 @@ type State =
   | { kind: "anonymous" }
   | { kind: "ready"; me: Me };
 
-let _cache: State = { kind: "loading" };
-const _subscribers = new Set<() => void>();
-let _inflight: Promise<void> | null = null;
+let adminCache: State = { kind: "loading" };
+const subscribers = new Set<() => void>();
+let inflight: Promise<void> | null = null;
 
 function notify() {
-  for (const cb of _subscribers) cb();
+  for (const cb of subscribers) cb();
 }
 
 async function refresh(): Promise<void> {
@@ -26,32 +26,30 @@ async function refresh(): Promise<void> {
     const r = await fetch("/api/v1/lb/me", { credentials: "same-origin" });
     if (r.ok) {
       const me = (await r.json()) as Me;
-      _cache = me.email
-        ? { kind: "ready", me }
-        : { kind: "anonymous" };
+      adminCache = me.email ? { kind: "ready", me } : { kind: "anonymous" };
     } else {
-      _cache = { kind: "anonymous" };
+      adminCache = { kind: "anonymous" };
     }
   } catch {
-    _cache = { kind: "anonymous" };
+    adminCache = { kind: "anonymous" };
   }
   notify();
 }
 
 export function lbAdminInvalidate(): void {
-  _inflight = refresh();
+  inflight = refresh();
 }
 
 function useState(): State {
   const [, force] = React.useReducer((n: number) => n + 1, 0);
   React.useEffect(() => {
-    _subscribers.add(force);
-    if (_inflight === null) _inflight = refresh();
+    subscribers.add(force);
+    if (inflight === null) inflight = refresh();
     return () => {
-      _subscribers.delete(force);
+      subscribers.delete(force);
     };
   }, []);
-  return _cache;
+  return adminCache;
 }
 
 // Backwards-compat hook used by the sidebar — returns the same

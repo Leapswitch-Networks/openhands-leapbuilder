@@ -1,4 +1,6 @@
 import React from "react";
+import { Trans, useTranslation } from "react-i18next";
+import { I18nKey } from "#/i18n/declaration";
 import { hasPerm, lbApi, Me } from "#/lib/lb-admin-api";
 
 // LeapBuilder M11 — application-level settings (admin scope).
@@ -16,6 +18,7 @@ import { hasPerm, lbApi, Me } from "#/lib/lb-admin-api";
 // /settings (the user profile menu), not here.
 
 export default function AppSettingsScreen() {
+  const { t } = useTranslation();
   const [me, setMe] = React.useState<Me | null>(null);
 
   React.useEffect(() => {
@@ -34,10 +37,14 @@ export default function AppSettingsScreen() {
   if (!hasPerm(me, "app_settings:view")) {
     return (
       <div className="flex flex-col gap-4 p-6 max-w-3xl">
-        <h1 className="text-2xl font-semibold">App Settings</h1>
+        <h1 className="text-2xl font-semibold">
+          {t(I18nKey.LB_APP_SETTINGS$TITLE)}
+        </h1>
         <p className="text-sm opacity-75">
-          You need the <code>app_settings:view</code> permission to view
-          this page.
+          <Trans
+            i18nKey={I18nKey.LB_APP_SETTINGS$NO_PERMISSION}
+            components={{ code: <code /> }}
+          />
         </p>
       </div>
     );
@@ -46,23 +53,29 @@ export default function AppSettingsScreen() {
   return (
     <div className="flex flex-col gap-6 p-6 max-w-3xl">
       <header className="flex flex-col gap-1">
-        <h1 className="text-2xl font-semibold">App Settings</h1>
+        <h1 className="text-2xl font-semibold">
+          {t(I18nKey.LB_APP_SETTINGS$TITLE)}
+        </h1>
         <p className="text-sm opacity-75">
-          Application-level configuration. User-scoped preferences
-          (theme, language, secrets) live under <a href="/settings" className="underline">Settings</a>.
+          <Trans
+            i18nKey={I18nKey.LB_APP_SETTINGS$DESCRIPTION}
+            components={{
+              // eslint-disable-next-line jsx-a11y/anchor-has-content, jsx-a11y/control-has-associated-label
+              settings: <a href="/settings" className="underline" />,
+            }}
+          />
         </p>
       </header>
 
       <section className="rounded-md border border-[#242424] p-4">
         <h2 className="text-sm font-semibold tracking-wide uppercase opacity-70 mb-3">
-          Placeholder
+          {t(I18nKey.LB_APP_SETTINGS$PLACEHOLDER_TITLE)}
         </h2>
         <p className="text-sm opacity-75">
-          Concrete settings (default LLM, SSO allowlist, audit retention,
-          feature flags, ...) will land here in subsequent milestones.
-          The <code>app_settings:view</code> and{" "}
-          <code>app_settings:update</code> permissions are already
-          defined in the catalog and can be granted to roles today.
+          <Trans
+            i18nKey={I18nKey.LB_APP_SETTINGS$PLACEHOLDER_BODY}
+            components={{ code: <code /> }}
+          />
         </p>
       </section>
     </div>

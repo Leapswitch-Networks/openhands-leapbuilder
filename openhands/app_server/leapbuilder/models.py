@@ -19,7 +19,6 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 from openhands.app_server.utils.sql_utils import Base
 
-
 SUPER_ADMIN_ROLE_ID = '00000000-0000-0000-0000-000000000001'
 SUPER_ADMIN_ROLE_NAME = 'super_admin'
 
@@ -30,8 +29,12 @@ class LbUser(Base):
     id: Mapped[str] = mapped_column(String, primary_key=True)
     email: Mapped[str] = mapped_column(String, unique=True, nullable=False, index=True)
     github_login: Mapped[str | None] = mapped_column(String, nullable=True)
-    first_seen_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
-    last_seen_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    first_seen_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
+    last_seen_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
     is_enabled: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
 
 
@@ -43,7 +46,9 @@ class LbRole(Base):
     description: Mapped[str | None] = mapped_column(String, nullable=True)
     is_system: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
     is_enabled: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
 
 
 class LbRolePermission(Base):

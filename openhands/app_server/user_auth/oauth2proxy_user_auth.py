@@ -94,6 +94,7 @@ class OAuth2ProxyUserAuth(DefaultUserAuth):
         if email:
             try:
                 from openhands.app_server.leapbuilder import users_store
+
                 users_store.record(email, github_login)
             except Exception:  # pragma: no cover
                 pass

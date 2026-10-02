@@ -17,8 +17,8 @@ export type PermissionAction =
   | "delete";
 
 export type PermissionResource = {
-  key: string;        // identifier used to build "<key>:<action>"
-  label: string;      // shown next to the checkbox row
+  key: string; // identifier used to build "<key>:<action>"
+  label: string; // shown next to the checkbox row
   actions: PermissionAction[];
 };
 
@@ -48,10 +48,7 @@ export const ACTION_LABELS: Record<PermissionAction, string> = {
   delete: "Delete",
 };
 
-export function permString(
-  resource: string,
-  action: PermissionAction,
-): string {
+export function permString(resource: string, action: PermissionAction): string {
   return `${resource}:${action}`;
 }
 

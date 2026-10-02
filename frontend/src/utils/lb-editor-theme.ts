@@ -38,6 +38,24 @@ export function readLbTokens() {
   };
 }
 
+function isLight(hex: string): boolean {
+  // Naive luma test — enough to choose Monaco's "vs" vs "vs-dark" base.
+  // Accepts #RGB and #RRGGBB; returns false for unparseable.
+  let h = hex.trim().replace("#", "");
+  if (h.length === 3) {
+    h = h
+      .split("")
+      .map((c) => c + c)
+      .join("");
+  }
+  if (h.length !== 6) return false;
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  const luma = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return luma > 0.5;
+}
+
 /**
  * Monaco theme definition derived from --lb-* tokens. Pass to
  * `monaco.editor.defineTheme("lb-theme", theme)` then
@@ -61,14 +79,14 @@ export function monacoThemeFromLbTokens() {
       "editorLineNumber.foreground": t.fgMuted,
       "editorLineNumber.activeForeground": t.fg,
       "editorCursor.foreground": t.accent,
-      "editor.selectionBackground": t.accent + "33",
+      "editor.selectionBackground": `${t.accent}33`,
       "editor.lineHighlightBackground": t.bgElevated,
       "editorIndentGuide.background": t.border,
       "editorIndentGuide.activeBackground": t.fgMuted,
-      "editor.findMatchBackground": t.accent + "55",
-      "editor.findMatchHighlightBackground": t.accent + "22",
-      "scrollbarSlider.background": t.border + "66",
-      "scrollbarSlider.hoverBackground": t.border + "AA",
+      "editor.findMatchBackground": `${t.accent}55`,
+      "editor.findMatchHighlightBackground": `${t.accent}22`,
+      "scrollbarSlider.background": `${t.border}66`,
+      "scrollbarSlider.hoverBackground": `${t.border}AA`,
     },
   } as const;
 }
@@ -85,7 +103,7 @@ export function xtermThemeFromLbTokens() {
     foreground: t.fg,
     cursor: t.accent,
     cursorAccent: t.accentFg,
-    selectionBackground: t.accent + "55",
+    selectionBackground: `${t.accent}55`,
     black: "#000000",
     brightBlack: "#666666",
     red: "#ff6b6b",
@@ -103,24 +121,6 @@ export function xtermThemeFromLbTokens() {
     white: t.fg,
     brightWhite: t.fg,
   };
-}
-
-function isLight(hex: string): boolean {
-  // Naive luma test — enough to choose Monaco's "vs" vs "vs-dark" base.
-  // Accepts #RGB and #RRGGBB; returns false for unparseable.
-  let h = hex.trim().replace("#", "");
-  if (h.length === 3) {
-    h = h
-      .split("")
-      .map((c) => c + c)
-      .join("");
-  }
-  if (h.length !== 6) return false;
-  const r = parseInt(h.slice(0, 2), 16);
-  const g = parseInt(h.slice(2, 4), 16);
-  const b = parseInt(h.slice(4, 6), 16);
-  const luma = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luma > 0.5;
 }
 
 /**

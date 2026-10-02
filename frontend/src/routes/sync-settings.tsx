@@ -1,4 +1,6 @@
 import React from "react";
+import { Trans, useTranslation } from "react-i18next";
+import { I18nKey } from "#/i18n/declaration";
 
 // LeapBuilder M3.5b — discoverable Settings page for the git-sync feature.
 // The conversational microagent (M3.5 v1, `microagents/git-sync.md`) already
@@ -37,6 +39,7 @@ const TRIGGERS: Array<{ phrase: string; what: string }> = [
 ];
 
 function SyncSettingsScreen() {
+  const { t: tr } = useTranslation();
   const [copied, setCopied] = React.useState<string | null>(null);
 
   const handleCopy = (phrase: string) => {
@@ -52,36 +55,37 @@ function SyncSettingsScreen() {
   return (
     <div className="flex flex-col gap-6 p-6 max-w-3xl">
       <header className="flex flex-col gap-2">
-        <h1 className="text-2xl font-semibold">Git sync</h1>
-        <p className="text-sm opacity-75">
-          A safety net so you never lose work and never build on a stale
-          base. Say any of these phrases in chat — the LeapBuilder
-          microagent handles the rest.
-        </p>
+        <h1 className="text-2xl font-semibold">{tr(I18nKey.LB_SYNC$TITLE)}</h1>
+        <p className="text-sm opacity-75">{tr(I18nKey.LB_SYNC$DESCRIPTION)}</p>
       </header>
 
       <div className="rounded-md border border-[#242424] p-4 text-sm leading-relaxed">
-        <p className="font-medium">Two modes (per project):</p>
+        <p className="font-medium">{tr(I18nKey.LB_SYNC$TWO_MODES)}</p>
         <ul className="list-disc pl-5 mt-2 space-y-1 opacity-90">
           <li>
-            <strong>Manual</strong> (default) — the agent commits and pushes
-            only when you ask.
+            <Trans
+              i18nKey={I18nKey.LB_SYNC$MODE_MANUAL}
+              components={{ strong: <strong /> }}
+            />
           </li>
           <li>
-            <strong>Repo-first</strong> — the agent auto-commits and
-            auto-pushes after every turn that touches files. Switch with{" "}
-            <code>switch to repo-first</code>.
+            <Trans
+              i18nKey={I18nKey.LB_SYNC$MODE_REPO_FIRST}
+              components={{ strong: <strong />, code: <code /> }}
+            />
           </li>
         </ul>
         <p className="mt-3 opacity-80">
-          Per-project config lives at <code>.leapbuilder/sync.toml</code> in
-          each scaffolded project.
+          <Trans
+            i18nKey={I18nKey.LB_SYNC$CONFIG_NOTE}
+            components={{ code: <code /> }}
+          />
         </p>
       </div>
 
       <div className="flex flex-col gap-2">
         <h2 className="text-sm font-semibold tracking-wide uppercase opacity-70">
-          Phrases the agent recognizes
+          {tr(I18nKey.LB_SYNC$PHRASES_HEADING)}
         </h2>
         <ul className="flex flex-col gap-2">
           {TRIGGERS.map((t) => (
@@ -101,7 +105,9 @@ function SyncSettingsScreen() {
                 className="shrink-0 rounded border border-[#242424] px-2 py-1 text-xs hover:bg-[#1f1f1f99]"
                 aria-label={`Copy "${t.phrase}"`}
               >
-                {copied === t.phrase ? "copied" : "copy"}
+                {copied === t.phrase
+                  ? tr(I18nKey.LB_SYNC$COPIED)
+                  : tr(I18nKey.LB_SYNC$COPY)}
               </button>
             </li>
           ))}
@@ -109,12 +115,10 @@ function SyncSettingsScreen() {
       </div>
 
       <footer className="text-xs opacity-60 pt-4 border-t border-[#242424]">
-        Hard guards: the agent will never <code>git push --force</code>{" "}
-        without the literal phrase "force push", never{" "}
-        <code>reset --hard</code> / <code>clean -fd</code> without consent,
-        and never stages <code>.env</code> / <code>*.pem</code> /{" "}
-        <code>credentials*</code> / <code>secrets*</code>. See{" "}
-        <code>docs/features/git-sync.md</code> in the LeapBuilder repo.
+        <Trans
+          i18nKey={I18nKey.LB_SYNC$HARD_GUARDS}
+          components={{ code: <code /> }}
+        />
       </footer>
     </div>
   );

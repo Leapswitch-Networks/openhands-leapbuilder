@@ -55,15 +55,7 @@ def register_lb_llm_providers() -> None:
 
     # Idempotent: replace any prior entry with our provider key.
     existing = getattr(litellm, 'custom_provider_map', None) or []
-    new_map = [
-        entry
-        for entry in existing
-        if entry.get('provider') != 'lb-claude-cli'
-    ]
-    new_map.append(
-        {'provider': 'lb-claude-cli', 'custom_handler': ClaudeCodeSDKLLM()}
-    )
+    new_map = [entry for entry in existing if entry.get('provider') != 'lb-claude-cli']
+    new_map.append({'provider': 'lb-claude-cli', 'custom_handler': ClaudeCodeSDKLLM()})
     litellm.custom_provider_map = new_map
-    logger.info(
-        'LeapBuilder LLM providers registered: lb-claude-cli (claude-code-sdk)'
-    )
+    logger.info('LeapBuilder LLM providers registered: lb-claude-cli (claude-code-sdk)')

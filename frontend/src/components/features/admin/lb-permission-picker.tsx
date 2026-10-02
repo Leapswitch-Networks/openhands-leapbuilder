@@ -1,8 +1,9 @@
 import React from "react";
+import { Trans } from "react-i18next";
+import { I18nKey } from "#/i18n/declaration";
 import {
   ACTION_LABELS,
   PERMISSION_CATALOG,
-  PermissionAction,
   permString,
 } from "#/lib/lb-permissions";
 
@@ -84,8 +85,12 @@ export function LbPermissionPicker({
       ))}
       {extras.length > 0 && (
         <div className="text-[11px] opacity-60 mt-1">
-          Also granted (not in catalog):{" "}
-          <code>{extras.join(", ")}</code>
+          <Trans
+            i18nKey={I18nKey.LB_PERMISSIONS$EXTRAS}
+            values={{ extras: extras.join(", ") }}
+            components={{ code: <code /> }}
+            tOptions={{ interpolation: { escapeValue: false } }}
+          />
         </div>
       )}
     </div>

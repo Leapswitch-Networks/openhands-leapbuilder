@@ -17,8 +17,7 @@ class LeapBuilderServerConfig(ServerConfig):
     """LeapBuilder defaults: per-user identity sourced from oauth2-proxy."""
 
     user_auth_class: str = (
-        'openhands.app_server.user_auth.'
-        'oauth2proxy_user_auth.OAuth2ProxyUserAuth'
+        'openhands.app_server.user_auth.oauth2proxy_user_auth.OAuth2ProxyUserAuth'
     )
 
     def verify_config(self):
