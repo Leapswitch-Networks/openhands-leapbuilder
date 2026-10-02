@@ -179,7 +179,7 @@ The `enterprise/` directory contains additional functionality that extends the o
 **Prerequisites:**
 - Python 3.12
 - Poetry (for dependency management)
-- Node.js 22.x (for frontend)
+- Node.js 26.x (for frontend)
 - Docker (optional)
 
 **Setup Steps:**

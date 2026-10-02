@@ -88,8 +88,8 @@ sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install -y python3.12 python3.12-dev python3.12-venv
 
-# Install Node.js 22.x
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+# Install Node.js 26.x
+curl -fsSL https://deb.nodesource.com/setup_26.x | sudo -E bash -
 sudo apt install -y nodejs
 
 # Install Poetry
