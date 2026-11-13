@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.12, <3.14"
 resolution-markers = [
     "python_full_version >= '3.13' and sys_platform == 'win32'",
@@ -394,6 +394,42 @@ wheels = [
 ]
 
 [[package]]
+name = "blake3"
+version = "1.0.11"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/24/fd/1ad6581856cbd018072b2b5debf9d8aa3928b579bedd5d170b60e5a20256/blake3-1.0.11.tar.gz", hash = "sha256:d73c0a87304d41045f6753a922113bede3ab09eda2d20371566a5bbe357c3deb", size = 117377, upload-time = "2026-10-08T08:57:41.987Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0b/08/0934c64d162900146acad032a507d856685737e5bdbdf2c796755e618d5d/blake3-1.0.11-cp312-cp312-macosx_10_12_x86_64.whl", hash = "sha256:c65b122659fde35a05cf8d5cc3dfee2747b4d04d8c316074a878950a4374f0ce", size = 342262, upload-time = "2026-10-08T08:55:38.906Z" },
+    { url = "https://files.pythonhosted.org/packages/e8/03/70046473e34462b83b4a502d0a73e2de1d8f6cc5dba05bdd01473bab2115/blake3-1.0.11-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:418410e4ebbc9f9d67e8a70651734341a61342a9a319c44fc8781fb9a7710dbc", size = 325864, upload-time = "2026-10-08T08:55:40.238Z" },
+    { url = "https://files.pythonhosted.org/packages/44/1f/6ae6f6ee6c17968ab6de0bb7a2dc7e7740062b498ff43c96012ccdff4444/blake3-1.0.11-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:021bbad3b9a5bf7c1bcf6752e80a83a9b46e55bd2cf610c44c7f0c9cd7f989b8", size = 369939, upload-time = "2026-10-08T08:55:41.758Z" },
+    { url = "https://files.pythonhosted.org/packages/ae/1e/05ab6ed48d69f6ced806749d4f3e4d3754f9d7e83de49ce022c959507e33/blake3-1.0.11-cp312-cp312-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:b28034185577899b7bbfc90b46715212b0fa73073895a457aa231ded2adc85d3", size = 367973, upload-time = "2026-10-08T08:55:43.055Z" },
+    { url = "https://files.pythonhosted.org/packages/bd/2d/c53ad05f064e272399526e55cbb4a8935906b2e195d7193fecd76d07dd63/blake3-1.0.11-cp312-cp312-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:b1ecb5d226f4c067847f039156d7f9bdaa9e60b2af179a968de745afa3095410", size = 439609, upload-time = "2026-10-08T08:55:44.465Z" },
+    { url = "https://files.pythonhosted.org/packages/d1/43/4a81c2309493a90795d80642a43dc45519fc2f76866b95a3e1fe06399081/blake3-1.0.11-cp312-cp312-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:fdb80a774cb0a440fcb62c9f64a64662c740c5bca985f78e70a3aa787264cc41", size = 481752, upload-time = "2026-10-08T08:55:45.809Z" },
+    { url = "https://files.pythonhosted.org/packages/df/34/9ef3cb9fc271f92100865f153121863a6cc7664be707b4670e0bcf626cd1/blake3-1.0.11-cp312-cp312-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:8ee200e70ef167178774b3bf9321140a1f5abab2a595665a6ef42f7d4e723ce3", size = 385041, upload-time = "2026-10-08T08:55:47.188Z" },
+    { url = "https://files.pythonhosted.org/packages/38/e3/0578c88bf4c268db7f529620788a6db9478927b1c1412ca2c19124bba864/blake3-1.0.11-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:33424c686b291c7682b5816fe9320466dbc0a457ef7e15c273c804a2d70fea70", size = 381348, upload-time = "2026-10-08T08:55:48.503Z" },
+    { url = "https://files.pythonhosted.org/packages/70/cc/a45946ee763b476d11866f28862912b8879ee3ae732825f100847dab9c0c/blake3-1.0.11-cp312-cp312-manylinux_2_31_riscv64.whl", hash = "sha256:6299ea0b7227942e22407c1680e2bee22dd2e9425721a65e24b5606aad129b81", size = 370397, upload-time = "2026-10-08T08:55:49.769Z" },
+    { url = "https://files.pythonhosted.org/packages/5d/8f/a8d97a61943dfdb77ff1180858ed4ccc6326798847ca3e4ba76bf393e088/blake3-1.0.11-cp312-cp312-musllinux_1_1_aarch64.whl", hash = "sha256:5cd9fea839097f51d553166f330193c29b48653cf5ddf41f11e568809f1ec489", size = 545371, upload-time = "2026-10-08T08:55:51.378Z" },
+    { url = "https://files.pythonhosted.org/packages/9f/2b/0de6181bcb9588edec87ad59d8d4a46b0b9ad3910063524096ba51e3739d/blake3-1.0.11-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:121e727827291ad48773eaaf1e2c5ab07973e45891f2e24455ae4ec022ac7df9", size = 589182, upload-time = "2026-10-08T08:55:52.786Z" },
+    { url = "https://files.pythonhosted.org/packages/05/fd/abc08d19d1766f6226ef9f56889a130f6030f2b499461c8d13fe75981fff/blake3-1.0.11-cp312-cp312-win32.whl", hash = "sha256:d9a945f01318de35ddb0a401b1281cb98de6abc4d866d133b36c0adf519bd5c7", size = 228655, upload-time = "2026-10-08T08:55:54.246Z" },
+    { url = "https://files.pythonhosted.org/packages/ab/51/50069ebf538b353413428f0d309f124413f6910d93465c67518512e71d18/blake3-1.0.11-cp312-cp312-win_amd64.whl", hash = "sha256:52c15cdb0f1ecbd4b91f8df767bed9a38bc32a6ffe5cb7148a534feb48b88a88", size = 218164, upload-time = "2026-10-08T08:55:55.533Z" },
+    { url = "https://files.pythonhosted.org/packages/c1/89/1fc1de48a33f73a8c5e7e8f4ee66cad105d9de36efe57ee8fdd6f9bc9a5a/blake3-1.0.11-cp312-cp312-win_arm64.whl", hash = "sha256:ea66216cbe8264615e94812fce253be5c60b75575f74b89edaee0be376aba764", size = 207725, upload-time = "2026-10-08T08:55:57.092Z" },
+    { url = "https://files.pythonhosted.org/packages/78/9f/2de41c02f6c6c3bd8322ca50a62fa354a1f1262af51b841229e7d88d2429/blake3-1.0.11-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:0865231cb616e0c2b9b8c6279a85776de056b475036d2c32cb1bef751b3eb44b", size = 341842, upload-time = "2026-10-08T08:55:58.421Z" },
+    { url = "https://files.pythonhosted.org/packages/72/ce/63a20a9e3e215224b0c0cf3c213c64d757eb0d302e4231ee1f57b3b6a68c/blake3-1.0.11-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:c43adf6fc6a051f9267550615bac6acdebdd9c3eab64debf0fb1e67e235f8814", size = 325514, upload-time = "2026-10-08T08:55:59.855Z" },
+    { url = "https://files.pythonhosted.org/packages/f3/dc/1e379b3448468ebbc9ad4f9f8e9afeeb51fe4a4b171e36256b72b24f1d0e/blake3-1.0.11-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:78e3f110fa8acdd64d1989aa0ffca0de2b2b62f9654b24cb0596cc7b9b4ce85f", size = 370096, upload-time = "2026-10-08T08:56:01.342Z" },
+    { url = "https://files.pythonhosted.org/packages/0a/4a/0bb56342146830521c4721d3046c8270c21659e3e8712d08d46071127459/blake3-1.0.11-cp313-cp313-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:937c93185f81bc2c2fe2522c364b21a25cec2269fd1d4f3059742e725b24723f", size = 368661, upload-time = "2026-10-08T08:56:02.7Z" },
+    { url = "https://files.pythonhosted.org/packages/d4/e2/044bb2a8f7cf9878c8641e48e6d722211e6b6583bbb5d4aacda9265c7330/blake3-1.0.11-cp313-cp313-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:87a38a109be8d83964de6344f70c9b7e320f9ee30d6c5a0af1483baab7908070", size = 440212, upload-time = "2026-10-08T08:56:04.236Z" },
+    { url = "https://files.pythonhosted.org/packages/d4/dd/8e715fb52eb9fb2eb495a73734b8841f0d431037abb093697facf758845c/blake3-1.0.11-cp313-cp313-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:57e97c07f8e308786e04fec106ac7b3fbc5cdfdfe9dd3ae59ae3f7bab6818b5b", size = 482119, upload-time = "2026-10-08T08:56:05.759Z" },
+    { url = "https://files.pythonhosted.org/packages/93/b5/c7e7a3a2df01653dd758888be1ff4ff5123d7be8fe75e4e16ac79a24ff5b/blake3-1.0.11-cp313-cp313-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:201c6e37b6941724be04e5d33e07f00917fc74891c91323dccccb2a6fa77b063", size = 384663, upload-time = "2026-10-08T08:56:07.21Z" },
+    { url = "https://files.pythonhosted.org/packages/ad/a2/ca8c8cd9333914ccb1f1acc3077231d253fd78c06ccc5bd89f6036674b3b/blake3-1.0.11-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dad7fc38101ec6fe0ff4ac1e4f89e0c20ee532d4c042a134b5fe83a2cb93bc2e", size = 381003, upload-time = "2026-10-08T08:56:08.745Z" },
+    { url = "https://files.pythonhosted.org/packages/4c/44/bbf61ade6f345e7781be4b30790a5f3f57aec0f532627592f2907d2002b6/blake3-1.0.11-cp313-cp313-manylinux_2_31_riscv64.whl", hash = "sha256:6b7794a82757778af858ab90b8fa882271508cb1cdcd8c3b569c4cfe9481a433", size = 369891, upload-time = "2026-10-08T08:56:10.342Z" },
+    { url = "https://files.pythonhosted.org/packages/50/f2/5a18d13876c5641a2b3a486d2eb27e4a76dc966edb7b4878b08824794952/blake3-1.0.11-cp313-cp313-musllinux_1_1_aarch64.whl", hash = "sha256:f035e889bc0c68568e3f69c5d9d932ec66b3d5d206d8d43d8a34234619ccb368", size = 545601, upload-time = "2026-10-08T08:56:11.657Z" },
+    { url = "https://files.pythonhosted.org/packages/75/0a/9c3cb797489956d59b7acdb923f195c760a22dfd1f28eae8c8de5276c9c6/blake3-1.0.11-cp313-cp313-musllinux_1_1_x86_64.whl", hash = "sha256:b065100e99267e56b8db82b0561800d13c4f779d4ea2baba463f1592b06d63d0", size = 588725, upload-time = "2026-10-08T08:56:13.564Z" },
+    { url = "https://files.pythonhosted.org/packages/e4/6b/52c8530b965508cb7003f05640f17e956ca1621c83fac847a01a2680ae24/blake3-1.0.11-cp313-cp313-win32.whl", hash = "sha256:1fa8a7233a10f92c1e17b49de2205945279df4eaf13659cb17909409c1d136d2", size = 229055, upload-time = "2026-10-08T08:56:14.99Z" },
+    { url = "https://files.pythonhosted.org/packages/8d/4e/5887683437805ce26bbfd9bcc16c6dadcf4b31941779cb8e9f37b1b072f4/blake3-1.0.11-cp313-cp313-win_amd64.whl", hash = "sha256:a7ff972740c02b3abc89048f27b90bc875412df04d7432d5e7ae64486ad43315", size = 217885, upload-time = "2026-10-08T08:56:16.276Z" },
+    { url = "https://files.pythonhosted.org/packages/40/7e/843ce68670b0c10e37ce2fa55c2bc0e3cef8f803aab6ba71b575857cb61d/blake3-1.0.11-cp313-cp313-win_arm64.whl", hash = "sha256:b1a2a2127a2b944c40f75c5d26f20781dcfd0e314dbedce81421442ef16330b3", size = 207393, upload-time = "2026-10-08T08:56:17.562Z" },
+]
+
+[[package]]
 name = "bleach"
 version = "6.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -760,7 +796,7 @@ name = "clr-loader"
 version = "0.2.10"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cffi", marker = "sys_platform == 'win32'" },
+    { name = "cffi" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/18/24/c12faf3f61614b3131b5c98d3bf0d376b49c7feaa73edca559aeb2aee080/clr_loader-0.2.10.tar.gz", hash = "sha256:81f114afbc5005bafc5efe5af1341d400e22137e275b042a8979f3feb9fc9446", size = 83605, upload-time = "2026-01-03T23:13:06.984Z" }
 wheels = [
@@ -2530,9 +2566,10 @@ wheels = [
 
 [[package]]
 name = "lmnr"
-version = "0.7.51"
+version = "0.9.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
+    { name = "blake3" },
     { name = "grpcio" },
     { name = "httpx" },
     { name = "lmnr-claude-code-proxy" },
@@ -2543,73 +2580,70 @@ dependencies = [
     { name = "opentelemetry-instrumentation-threading" },
     { name = "opentelemetry-sdk" },
     { name = "opentelemetry-semantic-conventions" },
-    { name = "opentelemetry-semantic-conventions-ai" },
     { name = "orjson" },
     { name = "packaging" },
     { name = "pydantic" },
     { name = "python-dotenv" },
-    { name = "tenacity" },
     { name = "tqdm" },
+    { name = "typing-extensions" },
+    { name = "wrapt" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3e/19/585cec51ef68306be868aa5b7c2dabef1b0d5caab251fb45d16069afbc2a/lmnr-0.7.51.tar.gz", hash = "sha256:ac9550c2e3d98b9951cd2bd967245cf3869b19f8ca4bb8b637960e4b8c58dca7", size = 260650, upload-time = "2026-04-30T12:51:56.967Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/52/5c/5d4ea1803e1f40989b73d2e206f51909539c4294236cccb7c1416e0809d8/lmnr-0.9.1.tar.gz", hash = "sha256:e9ec964df5b84f51c625f3ae8910e73fcc1d65bba3cb30ef0a4eacc7dfac9a48", size = 477817, upload-time = "2026-11-13T12:54:57.691Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b9/56/a283e5c5a518bcd34cfcc1ca7fb0da4f7d5119f3d0616469c92aa345773c/lmnr-0.7.51-py3-none-any.whl", hash = "sha256:d2492766becfe6d8aff37eb3cc56d8fe154c5a48324fd273c01bb249b17b75a7", size = 342300, upload-time = "2026-04-30T12:51:55.216Z" },
+    { url = "https://files.pythonhosted.org/packages/5f/56/2ded27f32a1330654a18dfb0b3c5bf44b2f4255524e12069a0e3192f69de/lmnr-0.9.1-py3-none-any.whl", hash = "sha256:2735b528abdfbc319235e12f016f95205366ed8c8f6a735ee656b4e30f262da7", size = 590089, upload-time = "2026-11-13T12:54:56.09Z" },
 ]
 
 [[package]]
 name = "lmnr-claude-code-proxy"
-version = "0.1.21"
+version = "0.2.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "httpx" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/bc/c8/697a70901c32022ff3270e5d39d09c60edc86f9b95b0371acbaba95faffa/lmnr_claude_code_proxy-0.1.21.tar.gz", hash = "sha256:897cb3c87a0a0f9c9d681f178416407202eec16575573589ab42a1a4241e9346", size = 61105, upload-time = "2026-04-22T16:20:17.306Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a7/85/6a186e8ee2cae00613733a7b1db576953a4954ecdd1d406a7c77dcfd8205/lmnr_claude_code_proxy-0.2.0.tar.gz", hash = "sha256:1b6a6b5a229a1c9360e097ab7ddb677ea8e0739d99229640f0bac87b8bc238b7", size = 62119, upload-time = "2026-10-23T20:52:24.931Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/3f/4d/583e1574534aaeac7fc21e2ab5c8391c62744980eaf596593cf48d154d97/lmnr_claude_code_proxy-0.1.21-cp312-cp312-macosx_10_12_x86_64.whl", hash = "sha256:6e5286020412aca3d8a9613cce9526b40099436a0f5afc4fe06cc8229f08c456", size = 1372699, upload-time = "2026-04-22T16:22:25.556Z" },
-    { url = "https://files.pythonhosted.org/packages/63/7d/2ecfad1e2ab8a61af79459c4ccd6af8988bc52a2910189af115d01f88969/lmnr_claude_code_proxy-0.1.21-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:8921cc4d3a5cfc7f47f43b26790f70835ab94311ca03410aac4f10d41e1f3b04", size = 1313653, upload-time = "2026-04-22T16:21:02.605Z" },
-    { url = "https://files.pythonhosted.org/packages/9e/f2/a6cbed39e3438d6dfbe8e2b8ee5b6cfd5f61a0090cf7ad0369d6619278bb/lmnr_claude_code_proxy-0.1.21-cp312-cp312-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:e855b3a52bd540c534abf8b87823855088bfb6068170dce43aea65b3b8d30642", size = 1358223, upload-time = "2026-04-22T16:20:18.195Z" },
-    { url = "https://files.pythonhosted.org/packages/53/55/18fb708d5daee9de8b439d8f7c419775b9ac9e88747a5b442ebac90c9964/lmnr_claude_code_proxy-0.1.21-cp312-cp312-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:815693c1e45aca834cd24b6a7e435d88d59a4dcd50bad2b55b1b89b179231c72", size = 1191660, upload-time = "2026-04-22T16:20:34.831Z" },
-    { url = "https://files.pythonhosted.org/packages/57/44/7f3df158b6421578b12a4c1c7d0b862d1c21f3364ab1e87c13a76a62b3a5/lmnr_claude_code_proxy-0.1.21-cp312-cp312-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:296432de34ff54543c702720215e5db4fdd2db97a2a84f9cb257c55b3a20f3c3", size = 1361646, upload-time = "2026-04-22T16:20:33.49Z" },
-    { url = "https://files.pythonhosted.org/packages/d3/45/bcab851ddf317099def6c5ae7be52e758529a47bfddcbb81cd3abbd01aa5/lmnr_claude_code_proxy-0.1.21-cp312-cp312-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:04455e30b8451d0b2f316ca6580806b65f3a246eafd8351fa5f8169f7800fa95", size = 1276576, upload-time = "2026-04-22T16:20:31.939Z" },
-    { url = "https://files.pythonhosted.org/packages/83/84/bc5799bc88f123ddd105edeabecfe247b2a967dadc6a158c0f406e89dee6/lmnr_claude_code_proxy-0.1.21-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:64b245d6fcc97a851d23a3f66191076c6a729a599b9f597f59779beece6025a5", size = 1503868, upload-time = "2026-04-22T16:21:49.791Z" },
-    { url = "https://files.pythonhosted.org/packages/8a/f6/8e7bed52697a7ac43ac71deff08c667b54df8e4ec654bde4bd805abfb245/lmnr_claude_code_proxy-0.1.21-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:39f181d84a00ee6bd6fe90fe3ce4b10e600ccd1a71a0ff26693defcb9fd9c6eb", size = 1471162, upload-time = "2026-04-22T16:22:47.643Z" },
-    { url = "https://files.pythonhosted.org/packages/58/f7/540674d61f2117fc2c4bcc8ac89d31a5334fd8e68a0032ffe6109e30ef83/lmnr_claude_code_proxy-0.1.21-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:1a9b6dea12972f723536f1239976993ac74dd8a3e015c2b3c04a799422e6f6b4", size = 1646664, upload-time = "2026-04-22T16:20:03.48Z" },
-    { url = "https://files.pythonhosted.org/packages/8a/b5/869f3d1effab5ace022a51206030d716dabda8f331abc2422f55449bc6ad/lmnr_claude_code_proxy-0.1.21-cp312-cp312-musllinux_1_2_armv7l.whl", hash = "sha256:91e499ac1b45836541a6dcc13e433409ba6c97a6881677abbb42225769924167", size = 1466278, upload-time = "2026-04-22T16:21:04.047Z" },
-    { url = "https://files.pythonhosted.org/packages/a3/c2/f3f0a36e1df6c8b1c9a093135b192985e0d172680da0a388074e8b7579f3/lmnr_claude_code_proxy-0.1.21-cp312-cp312-musllinux_1_2_i686.whl", hash = "sha256:058a2cbf9be7c27cc98d155b6c01e5070834f3a748da89fdf0aaaf1878ca1a15", size = 1526212, upload-time = "2026-04-22T16:21:30.771Z" },
-    { url = "https://files.pythonhosted.org/packages/29/41/9c54ddc3e7670824477dcdca4468d8db7e2467f7bc76a98ddd8ee369a6a1/lmnr_claude_code_proxy-0.1.21-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:a7035d9015ff03d42920c1d47a82cd182d256c3b80cac82f6d36cc5594983386", size = 1720244, upload-time = "2026-04-22T16:22:45.163Z" },
-    { url = "https://files.pythonhosted.org/packages/70/7b/b394ffc305084b7c16ed46211909ec17c34af6570286ccb4eec2e836fca0/lmnr_claude_code_proxy-0.1.21-cp312-cp312-win32.whl", hash = "sha256:0ec8296341ee28560623653cd9cbc9fe0cce213abbb7be1b76696a60cf8bc4d3", size = 1079244, upload-time = "2026-04-22T16:22:06.429Z" },
-    { url = "https://files.pythonhosted.org/packages/e7/ed/8d9d5dbfb84e505d3046b54ed79cbcd53adcb6ae79584f88f6c0604cca7d/lmnr_claude_code_proxy-0.1.21-cp312-cp312-win_amd64.whl", hash = "sha256:d29c00ce28af31855d7ba72a1a037c5f9f37148d2d08643f38a0e76cf195680e", size = 1323469, upload-time = "2026-04-22T16:20:07.286Z" },
-    { url = "https://files.pythonhosted.org/packages/b1/32/66cab9f287768eeb28ebcad36f8d61d0b1ebe5dc200230c1af42956ba711/lmnr_claude_code_proxy-0.1.21-cp312-cp312-win_arm64.whl", hash = "sha256:da87d2da2b94057c69837fea8897878fbc564efc3740a9e7cd0faee9817786ff", size = 1239719, upload-time = "2026-04-22T16:21:45.134Z" },
-    { url = "https://files.pythonhosted.org/packages/39/52/4db4343b811972181cb2c5531791b508c37f1509ef0115cb06cd18c5e6b8/lmnr_claude_code_proxy-0.1.21-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:79ec94a3ec0e2b2abea9a7b04ce6a2899cc466722807cbb32279941c35b1dfe1", size = 1374685, upload-time = "2026-04-22T16:20:15.995Z" },
-    { url = "https://files.pythonhosted.org/packages/22/91/815d0f4b1d5d79e57930af3c3294768274afcb814f9d5a5bf064a54cf958/lmnr_claude_code_proxy-0.1.21-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:f2d4e54cd47a6d02dc518f4016de5db345fea3056ec168d2bd0e260613433db1", size = 1314118, upload-time = "2026-04-22T16:19:56.344Z" },
-    { url = "https://files.pythonhosted.org/packages/97/d3/ddef5f5f20594ce2477472bd7b3d86fce5648a73fff72a89fdbed9483957/lmnr_claude_code_proxy-0.1.21-cp313-cp313-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:ea907116ea2cf310cc11de658d06d863521a1d295ff9c9471a936e7ee3621d0a", size = 1358327, upload-time = "2026-04-22T16:20:39.071Z" },
-    { url = "https://files.pythonhosted.org/packages/ad/91/21b4f403983103768009964aa34e0a1aa3f39b464b24cc5faa22ccbc0ec4/lmnr_claude_code_proxy-0.1.21-cp313-cp313-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:c89c504dd3cbcc26037f92c98dbfafd9d6de283ec16224873dac3002410c9823", size = 1191962, upload-time = "2026-04-22T16:22:49.238Z" },
-    { url = "https://files.pythonhosted.org/packages/32/6c/59b52cb4c3f383870c44398e964c4dc25dd1e515e601f6019402d920f1bd/lmnr_claude_code_proxy-0.1.21-cp313-cp313-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:30429aae486a979419c216546b5f4476c8b81eb7801d4d5a4d260d867941dc9a", size = 1361671, upload-time = "2026-04-22T16:20:10.418Z" },
-    { url = "https://files.pythonhosted.org/packages/94/5e/8a908d2fe3023763690bc0ef6097e070dfce54fb89af79eca2ea8bbe17ea/lmnr_claude_code_proxy-0.1.21-cp313-cp313-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:72075c8fe15f9646b3ae14ec3b8a19a12ba9f382c607f655f988167f11f62400", size = 1276646, upload-time = "2026-04-22T16:20:29.216Z" },
-    { url = "https://files.pythonhosted.org/packages/1b/72/d26911c0cfe3c4f30e1d759d2e7e6979cc9fa4a8b24f8918064173e3b910/lmnr_claude_code_proxy-0.1.21-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ac82208af0ac2b67b973ce32814c07b32ab366d0786f9ec7bb8607a2703ddb0c", size = 1503955, upload-time = "2026-04-22T16:21:25.91Z" },
-    { url = "https://files.pythonhosted.org/packages/ef/fd/caf91d3d888b137803a38ab9c866fd0b287354f78d1f77428d75d9ee1df7/lmnr_claude_code_proxy-0.1.21-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:df0118493744a07ea295756f1cb832bdb61607480f80b59cbd381ab6cb87208e", size = 1471232, upload-time = "2026-04-22T16:21:58.272Z" },
-    { url = "https://files.pythonhosted.org/packages/43/db/d4b931f0138af86b50ad1073ac34db21246d7a9e65cc6892499ae5410383/lmnr_claude_code_proxy-0.1.21-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:08b2db0aafb9da288e28be351cc1d4e91d5d530aef3a10ae5514d0b7639c692b", size = 1646914, upload-time = "2026-04-22T16:20:05.668Z" },
-    { url = "https://files.pythonhosted.org/packages/11/24/66e4caa7457183a122cbce6ea4066a9dd914ad1b2a2eba754d0f425d3ed5/lmnr_claude_code_proxy-0.1.21-cp313-cp313-musllinux_1_2_armv7l.whl", hash = "sha256:622a73ac12c126a1fd4cd29bed0daf2ed0eec8bbcc109b508694a230301ef21f", size = 1466321, upload-time = "2026-04-22T16:20:50.067Z" },
-    { url = "https://files.pythonhosted.org/packages/04/47/648ab32a7fe64310a16655df4381e2a11db77b095f31548f794f81184813/lmnr_claude_code_proxy-0.1.21-cp313-cp313-musllinux_1_2_i686.whl", hash = "sha256:6d3f553d1013ede7d4f7fdbe8715a77ad931f9b5c24bcd53c901b7ec6be2b508", size = 1526180, upload-time = "2026-04-22T16:22:00.014Z" },
-    { url = "https://files.pythonhosted.org/packages/63/5e/ebf5cc8fbaf471a52f3c2d0d9134c21cb404d57994a082b2a08ae03ad2a3/lmnr_claude_code_proxy-0.1.21-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:e158158a3b85cf8db708df429c2a3444453fec5408da6ac701d85c032fbcac5f", size = 1720394, upload-time = "2026-04-22T16:22:16.178Z" },
-    { url = "https://files.pythonhosted.org/packages/33/1b/a3c551cc44e60e24d5bb0444f8a95a9f6b0c5b0f35586a63a4c1042ad345/lmnr_claude_code_proxy-0.1.21-cp313-cp313-win32.whl", hash = "sha256:3e7b6ccb05bb994f38fc8a9cb27e169a0e1fb659e89f8cca3d46af37db0493a4", size = 1079406, upload-time = "2026-04-22T16:20:46.505Z" },
-    { url = "https://files.pythonhosted.org/packages/af/d6/382c0690e94a44a5414ba64810c8c13fef0829dbe461439cf180318a90b6/lmnr_claude_code_proxy-0.1.21-cp313-cp313-win_amd64.whl", hash = "sha256:5e1fcaf93cff83557e147ad04e2e8928719761c1ef0cdae8e687cd90ca652d8a", size = 1323521, upload-time = "2026-04-22T16:21:51.476Z" },
-    { url = "https://files.pythonhosted.org/packages/f0/2c/ea58cea29168a8495b12a5d0f9e0d6269083d47c2517fc3b379520f8be9f/lmnr_claude_code_proxy-0.1.21-cp313-cp313-win_arm64.whl", hash = "sha256:65bff5e15288b273019413fdc711bbd9e0cdbbe9a678f16ac044c19f2c443765", size = 1240859, upload-time = "2026-04-22T16:22:01.612Z" },
-    { url = "https://files.pythonhosted.org/packages/f0/59/b7ca350da44bda8756af9d24293a807e54a0904b3a2438f9bd31e5a63fa0/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-macosx_10_12_x86_64.whl", hash = "sha256:f372791e240608b53db5db4fae581a7edd4fa22636898a9f6d649a0d5ccdd159", size = 1372869, upload-time = "2026-04-22T16:20:19.621Z" },
-    { url = "https://files.pythonhosted.org/packages/d5/2a/090156381d2b5ec4426377784d7aff32f029829aa4fd44d913f6360db35a/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:73c9ce9fc15ebbc9c0e59b0d80e928814de4cdc359245ebb9b279896913fcfe8", size = 1313902, upload-time = "2026-04-22T16:20:13.014Z" },
-    { url = "https://files.pythonhosted.org/packages/99/0b/f0c6a19b8c61db8182d44922a3ac2cbbcdb9223e28df04f44fb4ea23a284/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:44b3b5c0c9f4c32e481214dd1d3ff39c8596d5c7c1e031e33e8ff29371d4d372", size = 1358539, upload-time = "2026-04-22T16:19:50.411Z" },
-    { url = "https://files.pythonhosted.org/packages/ba/65/047d219a1abae86ca06adc863feb26f4996beaede32858612bae2f7325d8/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:32f253bc7be435636d16eafc2cc218b7ab0a3c56ed67f2a0fae917742accdc50", size = 1191697, upload-time = "2026-04-22T16:21:19.482Z" },
-    { url = "https://files.pythonhosted.org/packages/f1/59/8516e80c5e042d992284a3480bea948d2ecc8eaaac17a47c0ea661fa15d4/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:18c9c0c0ce756f7473ec7e396c43c572e7166d6a246c23347de800bf1f236986", size = 1361736, upload-time = "2026-04-22T16:20:59.39Z" },
-    { url = "https://files.pythonhosted.org/packages/89/9f/6225c3842c13d9667ae6f510b03da407b4851e2dd896c438233ebb27cb38/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:ceeb2318ea5682c69b1ff72daabcac4a2fbc07a78794cd1d55acc26edbf9403b", size = 1276804, upload-time = "2026-04-22T16:22:50.871Z" },
-    { url = "https://files.pythonhosted.org/packages/31/41/f2904249c0339a025bc4852054e4b22749079ba3b6edab8062a7a1abb659/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fb1b3429a5fe48faf016898c82c33661923d301a7fd61a30a37f71769ee7b336", size = 1504077, upload-time = "2026-04-22T16:22:30.445Z" },
-    { url = "https://files.pythonhosted.org/packages/c6/4a/b99684fad6d0a9cf08fa46c40dd7ff09e5756110812549924a30e75e6ce9/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-manylinux_2_28_aarch64.whl", hash = "sha256:ecc2ce42767658fa253acd47946704f1053dfb986d3c99bff85596e95bc1ec80", size = 1471510, upload-time = "2026-04-22T16:21:14.295Z" },
-    { url = "https://files.pythonhosted.org/packages/3e/22/7346b8377e47ebd33e6820348d1fe9b2d54d3ef12acdf9568d6788f88f74/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:37d10e1c924dcf4e1ed61a24943c1cbf374b97315d7b8623a7432e4cfec8c948", size = 1646674, upload-time = "2026-04-22T16:22:12.961Z" },
-    { url = "https://files.pythonhosted.org/packages/30/67/b2c9926dc0cc3fec3e4f3d21422829828089017d929ea244917852393b63/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-musllinux_1_2_armv7l.whl", hash = "sha256:81df9f336f12f4ca6920ef02617aa5d9722c7680a4378e4b88255afe7c2c201b", size = 1466256, upload-time = "2026-04-22T16:20:44.351Z" },
-    { url = "https://files.pythonhosted.org/packages/29/87/d670907853b3cf55f16f8860b155a3e0f292cb91bd0ce1dc0f07222c66a1/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-musllinux_1_2_i686.whl", hash = "sha256:1c87a2cb6e1673753d7477774304ccf13debc217869ebebb893e4ff112ae89a2", size = 1526454, upload-time = "2026-04-22T16:21:24.432Z" },
-    { url = "https://files.pythonhosted.org/packages/41/c7/57f01bd9095132f84b57ec0b4b4bc2242764f1816f00a5002b542f0022db/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:0722476427bf5a61a50386d294dfd1576afa20ed2794b11bfce4f7c59b4dab54", size = 1720509, upload-time = "2026-04-22T16:22:04.857Z" },
-    { url = "https://files.pythonhosted.org/packages/f6/bd/d2dcd3ea62ad820d86130fefe593f29c8a13e76b1f2c1898297d46da2666/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-win32.whl", hash = "sha256:bd9f06b2d99f02ffbfd85a5b756fc8467338379c38130b8c1ed6285d1b8a349a", size = 1079417, upload-time = "2026-04-22T16:22:14.619Z" },
-    { url = "https://files.pythonhosted.org/packages/ef/1b/94a953b475f87f8b0e77e9b727ff7d9f0d72b7178fbe1c6dcec829d02618/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-win_amd64.whl", hash = "sha256:fe9b33e5ed4314a11ddab5ccbe24276a3007e134fe74d1d06e2bacb3614c1374", size = 1319032, upload-time = "2026-04-22T16:20:26.397Z" },
-    { url = "https://files.pythonhosted.org/packages/12/cf/6cf6a232624c4e437237836185db57c6368f5c6503486741d0232b54d407/lmnr_claude_code_proxy-0.1.21-cp313-cp313t-win_arm64.whl", hash = "sha256:d1b67147d30c71297fd36cf754e18526dc20d0cc90d1cab006b30d185c3b97fc", size = 1239776, upload-time = "2026-04-22T16:20:24.404Z" },
+    { url = "https://files.pythonhosted.org/packages/19/99/ca5377b7416e7d7d461bd5870f05b07e07a6033b21df98789763d326a95a/lmnr_claude_code_proxy-0.2.0-cp312-cp312-macosx_10_12_x86_64.whl", hash = "sha256:08aab3e37745a662fd5937b4f8129adc0191f141629dac3301e5bea6439ae329", size = 1363043, upload-time = "2026-10-23T20:49:43.299Z" },
+    { url = "https://files.pythonhosted.org/packages/c8/e0/964699438aa102a7e0604472a3781b96fb1466c3a3dc3eb352ce4cc454b3/lmnr_claude_code_proxy-0.2.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:d042959c38cd5375f98dea9d0bbcb0cd9a9fce534c9112d7d9b0e48431625ba2", size = 1301145, upload-time = "2026-10-23T20:49:44.429Z" },
+    { url = "https://files.pythonhosted.org/packages/23/23/1ad88500e578411c3ca8501719efb7c12bd16ded29eb5c35aea463a652ea/lmnr_claude_code_proxy-0.2.0-cp312-cp312-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:5cb972d90e406cad29acff2692548905a16e9314b80b81d15f057199725965f8", size = 1362816, upload-time = "2026-10-23T20:49:45.831Z" },
+    { url = "https://files.pythonhosted.org/packages/f3/42/a35eab962da60aacf0a406bed21c21f3f7d0bbb3ffa7acf4e8f953414173/lmnr_claude_code_proxy-0.2.0-cp312-cp312-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:c19d9a31b343712f1a6640c368b9ab844fa0ff4bf1b2245ac5382b5385f58a4a", size = 1195743, upload-time = "2026-10-23T20:49:47.071Z" },
+    { url = "https://files.pythonhosted.org/packages/fa/0e/b494633ce46c6de3f5114700ed60661ffa4bbc36cb746d8d3836d6a0e29f/lmnr_claude_code_proxy-0.2.0-cp312-cp312-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:e9a27b09d747cdaca3b99b1796bab0bd8e05840f994fb2268401d01cb00d99f3", size = 1353723, upload-time = "2026-10-23T20:49:48.691Z" },
+    { url = "https://files.pythonhosted.org/packages/47/d8/369fbea796486846a18921ea0c16d7fe4735f59fc20dae85251e48869402/lmnr_claude_code_proxy-0.2.0-cp312-cp312-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:95fb9d87b683213e37aac0f059abe0be6854ad45ce89369719257dbc742e7a71", size = 1286361, upload-time = "2026-10-23T20:49:50.036Z" },
+    { url = "https://files.pythonhosted.org/packages/50/70/0ddc5c2e033e91dc46850a315d8ddc6a4a65dc73669f9d8632dfaeea36ed/lmnr_claude_code_proxy-0.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fdce44d67147785b6449d5d1ee2330ed722a8820af6ef0c240e879e56ac36baf", size = 1499317, upload-time = "2026-10-23T20:49:51.298Z" },
+    { url = "https://files.pythonhosted.org/packages/48/7a/f4f911453439fae7e7896888db8aacd934799a8fc569d9c5107129065341/lmnr_claude_code_proxy-0.2.0-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:7efa6d4d6a19b898a9b8d538fee93495cab4e62ec30c895a6ca0ad1267420f47", size = 1467602, upload-time = "2026-10-23T20:49:52.779Z" },
+    { url = "https://files.pythonhosted.org/packages/fd/5e/7586297cb23791b780e77c7634b5ff0d4a3a89860e1b751cfe3ccdcdbbcd/lmnr_claude_code_proxy-0.2.0-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:03f05622444a3507b7c2af2437c5b328ca9653e4b5929087d824051ff5bc04cb", size = 1646157, upload-time = "2026-10-23T20:49:54.458Z" },
+    { url = "https://files.pythonhosted.org/packages/94/06/e7a9b4783096f3bda41656aa1bf96fa0906d59b43b887009e7c3fca2ed30/lmnr_claude_code_proxy-0.2.0-cp312-cp312-musllinux_1_2_armv7l.whl", hash = "sha256:418112504bed3a72711388ca2f488d344ee044168334cf26d9848c1fcc34cbed", size = 1471229, upload-time = "2026-10-23T20:49:55.732Z" },
+    { url = "https://files.pythonhosted.org/packages/ac/17/53e3b9b9b9dccbfed82c9bf60e17402682363f518dc2195f08ca28a192be/lmnr_claude_code_proxy-0.2.0-cp312-cp312-musllinux_1_2_i686.whl", hash = "sha256:6c42d48f3bfe3339ff7838dcf75860d361a962303034ee48a39753d4c348d6c9", size = 1528933, upload-time = "2026-10-23T20:49:57.044Z" },
+    { url = "https://files.pythonhosted.org/packages/8b/9b/1975d44ebc02c661b8e8d789b5f83867b61c8fadd0dfd6e72567019e631e/lmnr_claude_code_proxy-0.2.0-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:fbcfc360c6465f80eafd7c973ef91c1453ceff474e5735b2d02fb2981bfac697", size = 1716572, upload-time = "2026-10-23T20:49:58.268Z" },
+    { url = "https://files.pythonhosted.org/packages/47/0f/f97b3d10c594f290d31521f5c8ec0ce78fe3fc17eb2d49782d22975399eb/lmnr_claude_code_proxy-0.2.0-cp312-cp312-win32.whl", hash = "sha256:a42072e7b5e52e6d5fa79ec188d20a57495dc1cbb2cc72561988b6115b3ed537", size = 1079465, upload-time = "2026-10-23T20:49:59.41Z" },
+    { url = "https://files.pythonhosted.org/packages/9a/d8/8322d89361d06560527ea086a320843f914589389deeeb0e051a0a4a8d3a/lmnr_claude_code_proxy-0.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:33629350caf91cedcdc45d6f86ce4dceba9a299fc03756a1510aa5414dbdc0a9", size = 1314026, upload-time = "2026-10-23T20:50:00.597Z" },
+    { url = "https://files.pythonhosted.org/packages/af/47/afa710988ce8a997c325674beb5da055882f831ec2ada9b56a8ccfd9c39a/lmnr_claude_code_proxy-0.2.0-cp312-cp312-win_arm64.whl", hash = "sha256:78af2ec19dce9425ff7bc615f69c7836c6767b084600156c79f0acc362305d2d", size = 1235981, upload-time = "2026-10-23T20:50:02.049Z" },
+    { url = "https://files.pythonhosted.org/packages/e0/83/81189c6ffe82a26084ad288aec25a8847330cea7623149e1f770b160f9b7/lmnr_claude_code_proxy-0.2.0-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:3ba87b3d988b06ed098e0a80cdf53cc75b9a6dde6b21304af4f06ad4bebe457e", size = 1363033, upload-time = "2026-10-23T20:50:03.248Z" },
+    { url = "https://files.pythonhosted.org/packages/20/ce/61dbf7526f9facaf237fe074fce2837fbdfc805dd03d43bf466e3521cb2d/lmnr_claude_code_proxy-0.2.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:6147cf6e0b93096470caee1a018c176cb8fc039a314aa47ccdb4e8c6c94534f9", size = 1301085, upload-time = "2026-10-23T20:50:04.493Z" },
+    { url = "https://files.pythonhosted.org/packages/a1/2d/9aa3b7a27331b5f1b311c04de7cbf66405fcf655bbfc7a507787f4f8af97/lmnr_claude_code_proxy-0.2.0-cp313-cp313-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:fef851cb181120b764327d442e136a35abe0b33f80345f397b0fa79d8d5779e5", size = 1362918, upload-time = "2026-10-23T20:50:06.014Z" },
+    { url = "https://files.pythonhosted.org/packages/79/91/60aa37c8660194a81bcbe5654f3ac3d9eeae2bd33c3f6a5d2fd58355bb99/lmnr_claude_code_proxy-0.2.0-cp313-cp313-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:b249abb69b39b37295cec7cde66ecd0b0c1f8cd23213732de8a361a5750e7731", size = 1195765, upload-time = "2026-10-23T20:50:07.38Z" },
+    { url = "https://files.pythonhosted.org/packages/88/ca/8330083fd8f3e358f1adf8b0e2ad1d4866224e15a104cbd06e60d61f0f31/lmnr_claude_code_proxy-0.2.0-cp313-cp313-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:da9018d5d82966d22413af40d135ac1e965ba88f60363cf2e197ffc93a30936b", size = 1354004, upload-time = "2026-10-23T20:50:08.697Z" },
+    { url = "https://files.pythonhosted.org/packages/e2/0f/1a44f2bb7021fff125bd4d136f3b8649226ecb8a152cd52f1b899b1c4d71/lmnr_claude_code_proxy-0.2.0-cp313-cp313-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:c01cac9a65a6e5c60dd1811466e30e5bb50c04bac40d6964e9a22363eb512eb6", size = 1286561, upload-time = "2026-10-23T20:50:10.404Z" },
+    { url = "https://files.pythonhosted.org/packages/21/1e/f72f9aed8f57299340f800c481fa0f140faa8e031558c6c8efcc8ac37c72/lmnr_claude_code_proxy-0.2.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:80ae777c018dbcaa4de97bf47ad24ca04a9965197246c4319c37280cd907829d", size = 1499485, upload-time = "2026-10-23T20:50:11.716Z" },
+    { url = "https://files.pythonhosted.org/packages/2a/0f/0d1febc87d0174fac30946b41d0f6d5d280988a0db6ae87b53d5a32bc7a3/lmnr_claude_code_proxy-0.2.0-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:435710fd84c3026522b35212e3fd779b56897f6c0a52d27f2734bc1508b4cb50", size = 1467663, upload-time = "2026-10-23T20:50:13.203Z" },
+    { url = "https://files.pythonhosted.org/packages/d6/d0/8c97529c4557af6cfa65ca0eb9fc3224c73639139e257ecac59df72acc55/lmnr_claude_code_proxy-0.2.0-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:ae497a092116a2ed6769a9603f7962d1acd96e278080803bd5c28f221a74970c", size = 1646033, upload-time = "2026-10-23T20:50:14.503Z" },
+    { url = "https://files.pythonhosted.org/packages/7f/ad/52869c2a968e6fd1a7ca9155b0f15d931f129845aded2154952dd179a49a/lmnr_claude_code_proxy-0.2.0-cp313-cp313-musllinux_1_2_armv7l.whl", hash = "sha256:e1159695c856698182a9374c796fc3a9b956db283752d55594194be7814bc912", size = 1471246, upload-time = "2026-10-23T20:50:15.865Z" },
+    { url = "https://files.pythonhosted.org/packages/ac/60/48bbefa630b1a7b914fd06e833f2804b17b55c8099adab82eec5d460f7bb/lmnr_claude_code_proxy-0.2.0-cp313-cp313-musllinux_1_2_i686.whl", hash = "sha256:044e2b52d223f094e1b7dcd37438cd334a1cff159f0891a9bf7e811faef8e908", size = 1528926, upload-time = "2026-10-23T20:50:17.29Z" },
+    { url = "https://files.pythonhosted.org/packages/50/cb/605eb1e7efc8ac92cf3ef45069fa956c8d8da726d8bbc61d9d9bf3126fe3/lmnr_claude_code_proxy-0.2.0-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:5b43cca24621644157872e312c828f9b9ea71518171455c405ffb84a11169f07", size = 1716472, upload-time = "2026-10-23T20:50:18.827Z" },
+    { url = "https://files.pythonhosted.org/packages/ba/49/071a706c28f20e4730e3067ea3c743939c1a98d6341f80defb99af5792d1/lmnr_claude_code_proxy-0.2.0-cp313-cp313-win32.whl", hash = "sha256:30cbe1467b6eb50aec73be5f0335e132a31a10761136af841c2e1d70312ae31d", size = 1079544, upload-time = "2026-10-23T20:50:20.137Z" },
+    { url = "https://files.pythonhosted.org/packages/cf/2e/4659cb83a642b5374bb1ff5f2ad2c1e39c33be9f751915e32e2b49ecaad7/lmnr_claude_code_proxy-0.2.0-cp313-cp313-win_amd64.whl", hash = "sha256:20eb563fa5f4ea152e0a76a67f8a763113cf972768d94b7bb9fb6986640115a4", size = 1314146, upload-time = "2026-10-23T20:50:21.589Z" },
+    { url = "https://files.pythonhosted.org/packages/28/fc/19d7a9a33c5eaa16db10edc46fecff22ead3fdde82e1b318f1dc083ca1fb/lmnr_claude_code_proxy-0.2.0-cp313-cp313-win_arm64.whl", hash = "sha256:228674affdfb1c28bbcf7a22ffa08c5424fff45dcbf70920c0476a189c002074", size = 1236106, upload-time = "2026-10-23T20:50:23.143Z" },
+    { url = "https://files.pythonhosted.org/packages/b5/30/d8f3605eb5149e7de1009d7f500fbbe5e7a4f9eb1bd6bc2016d7d0619bfa/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-macosx_10_12_x86_64.whl", hash = "sha256:248ee544750099ff2419e5e1ceb16a323ecf5f6da1a032c13b434c9aa523d4e4", size = 1363445, upload-time = "2026-10-23T20:52:06.81Z" },
+    { url = "https://files.pythonhosted.org/packages/e1/fe/42c092f2aeedccddb537296e30ca65e0c6155c5d8ef74a8a960ca3963ce4/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-macosx_11_0_arm64.whl", hash = "sha256:46e309282dd0bb33d76a68625c5693ae147f541b957be0f690e972fd2aeeb597", size = 1301544, upload-time = "2026-10-23T20:52:08.182Z" },
+    { url = "https://files.pythonhosted.org/packages/23/62/963bb95ade0ac6561c137cf0b4fb5c2b40097d9bd7b4034d0c1008a58879/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:b34044ccad53e8ef69c32cb83b16a94e21c9bed0fd71f6e0e4b019298a7e81b1", size = 1363634, upload-time = "2026-10-23T20:52:09.577Z" },
+    { url = "https://files.pythonhosted.org/packages/fd/d1/e3d29989543bae09fddb60cd06fc041659b489d22ddb855780e082f2ce74/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:2d729dc8df27f6f6ab65e795a290da9591dfd8399ec5290363e920b309ecb2fd", size = 1196079, upload-time = "2026-10-23T20:52:11.296Z" },
+    { url = "https://files.pythonhosted.org/packages/3e/b9/7a3d40f4e124676ccd2ff27f5c3a1a8d3ce8541380989eef84ee3f69c3c7/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:28570afe27ebef05cfea889973bf8ed48ed97a08ad846575d5d129e8aff391f1", size = 1354386, upload-time = "2026-10-23T20:52:12.562Z" },
+    { url = "https://files.pythonhosted.org/packages/c4/30/4d87616f2a1789e0a2c820ab37a270458ffe39d67e976622b802de2ddb49/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:fb5a44a87a7bb5495130b15f1a16eba3dc177c0f552af48f11d546e137e095e6", size = 1286830, upload-time = "2026-10-23T20:52:13.867Z" },
+    { url = "https://files.pythonhosted.org/packages/14/56/2ee0fd814b65229ec36deb4073021a4c09196e344f35f9a71d3c4eb9dd14/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ea152e39ab80f989be064df729b019c2cc4ff01fe9ca859a436f8ae080aa81bd", size = 1499935, upload-time = "2026-10-23T20:52:15.541Z" },
+    { url = "https://files.pythonhosted.org/packages/26/48/125684e4f7595621da895d3d82c6951dd678ffcfc992e8e99169e956694b/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-manylinux_2_28_aarch64.whl", hash = "sha256:7d908a286a2f7a7bbdf46a3d0ed6abd3eb784d5770534995d2a7062b754694c9", size = 1467889, upload-time = "2026-10-23T20:52:17.197Z" },
+    { url = "https://files.pythonhosted.org/packages/22/91/da6ddffc421a39e4abe883ac3dd74aaeff2e42a2251610b1698b10561015/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-musllinux_1_2_aarch64.whl", hash = "sha256:028534603e683d3cdf5a15224f367ae0e551982eb6c4029bc794ecbcaa6e34a8", size = 1646345, upload-time = "2026-10-23T20:52:19.149Z" },
+    { url = "https://files.pythonhosted.org/packages/09/2a/24422ab63fbb23f19c06bc18c3eb3d624b21e3e97d4d058afd0508f19a6d/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-musllinux_1_2_armv7l.whl", hash = "sha256:dfbab358876c2d93cdbfcf3e2f5a518efa120107fe3989f3074f92d11417ddca", size = 1471429, upload-time = "2026-10-23T20:52:20.553Z" },
+    { url = "https://files.pythonhosted.org/packages/98/e9/825bae2a41d64e208c05d556683157d0cf8ec72663cc1ff5b5a9cfa048f5/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-musllinux_1_2_i686.whl", hash = "sha256:cb9de304fb3cd548f3d0a4600fceadc383051eaa9166393c1a86e7b6a54f79b8", size = 1529581, upload-time = "2026-10-23T20:52:21.923Z" },
+    { url = "https://files.pythonhosted.org/packages/10/e0/46efa514c6aaed30ff961d8dbcdaf4d3a49ca217015fe0b6c1f807d2dd57/lmnr_claude_code_proxy-0.2.0-pp312-pypy312_pp73-musllinux_1_2_x86_64.whl", hash = "sha256:0827204f3fe722d9da723b72496bd5b03cd3ed0a2f98897ec5e7820d325c3143", size = 1717005, upload-time = "2026-10-23T20:52:23.712Z" },
 ]
 
 [[package]]
@@ -3486,68 +3520,99 @@ wheels = [
 
 [[package]]
 name = "opentelemetry-api"
-version = "1.39.1"
+version = "1.45.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "importlib-metadata" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/97/b9/3161be15bb8e3ad01be8be5a968a9237c3027c5be504362ff800fca3e442/opentelemetry_api-1.39.1.tar.gz", hash = "sha256:fbde8c80e1b937a2c61f20347e91c0c18a1940cecf012d62e65a7caf08967c9c", size = 65767, upload-time = "2025-12-11T13:32:39.182Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/19/14/cf3a6b6448849656e1e5f4e2101f3988dc6789724050096aba1bc5ccf592/opentelemetry_api-1.45.2.tar.gz", hash = "sha256:d7b0008e21e5fd61cbe7a7f34ca3b6905a78ab677d9bc395e299359c75cda6b4", size = 73277, upload-time = "2026-10-29T17:29:37.888Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cf/df/d3f1ddf4bb4cb50ed9b1139cc7b1c54c34a1e7ce8fd1b9a37c0d1551a6bd/opentelemetry_api-1.39.1-py3-none-any.whl", hash = "sha256:2edd8463432a7f8443edce90972169b195e7d6a05500cd29e6d13898187c9950", size = 66356, upload-time = "2025-12-11T13:32:17.304Z" },
+    { url = "https://files.pythonhosted.org/packages/a9/2d/610db864d7513158cebb8f36cc88e67e73bd6c7aa1905ef18d89e1281c81/opentelemetry_api-1.45.2-py3-none-any.whl", hash = "sha256:2cbd737377e710ee740d261c94e93fa0f08e6d037c18f17513cc0a2d94479a34", size = 60335, upload-time = "2026-10-29T17:29:06.955Z" },
+]
+
+[[package]]
+name = "opentelemetry-exporter-http-transport"
+version = "0.66b2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "opentelemetry-api" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a6/e6/dbeb3e217418071656232a4028c791060d219f218cef1249b664049d12c0/opentelemetry_exporter_http_transport-0.66b2.tar.gz", hash = "sha256:66d6ed810a515432c8891da9a834464332fd70badeca45bdeeae81b4280c903b", size = 11693, upload-time = "2026-10-29T17:29:39.444Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a1/b2/c622a101f31c0e6670b82f4264c4e77c161bce415bc6fc158fda0b82e218/opentelemetry_exporter_http_transport-0.66b2-py3-none-any.whl", hash = "sha256:fd5f5b490c099acda1cd7b909d5e8981436bf18cc8c6098d302d114c271720e9", size = 12154, upload-time = "2026-10-29T17:29:10.244Z" },
+]
+
+[package.optional-dependencies]
+requests = [
+    { name = "requests" },
+]
+
+[[package]]
+name = "opentelemetry-exporter-otlp-common"
+version = "0.66b2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "opentelemetry-sdk" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5a/3c/3f2cc8c42bde2620e65024d71e2eb025f7bd0821bb363b52bcc5a3260dbd/opentelemetry_exporter_otlp_common-0.66b2.tar.gz", hash = "sha256:06f5a9b88638e310efa1f1d206cdf6b75393e112aba4e174a963416192bd1028", size = 14325, upload-time = "2026-10-29T17:29:41.701Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a8/47/b3049e30b339c82e3c7ec1fc692185a5d5a3ba65a94c570bb39b2c0b8424/opentelemetry_exporter_otlp_common-0.66b2-py3-none-any.whl", hash = "sha256:ace86efb75489f925f1ef809856ae5f0c7db534e4afdc624530222228b1236a5", size = 12385, upload-time = "2026-10-29T17:29:13.667Z" },
 ]
 
 [[package]]
 name = "opentelemetry-exporter-otlp-proto-common"
-version = "1.39.1"
+version = "1.45.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "opentelemetry-proto" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e9/9d/22d241b66f7bbde88a3bfa6847a351d2c46b84de23e71222c6aae25c7050/opentelemetry_exporter_otlp_proto_common-1.39.1.tar.gz", hash = "sha256:763370d4737a59741c89a67b50f9e39271639ee4afc999dadfe768541c027464", size = 20409, upload-time = "2025-12-11T13:32:40.885Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/69/58/239c98b36d9ea317098769957043c251703636a26189c884fba46c1dad84/opentelemetry_exporter_otlp_proto_common-1.45.2.tar.gz", hash = "sha256:f1f2806f3f28ce7938033823e50934fcd91595a39de38e69a28a51e19f40fc6d", size = 18873, upload-time = "2026-10-29T17:29:44.496Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8c/02/ffc3e143d89a27ac21fd557365b98bd0653b98de8a101151d5805b5d4c33/opentelemetry_exporter_otlp_proto_common-1.39.1-py3-none-any.whl", hash = "sha256:08f8a5862d64cc3435105686d0216c1365dc5701f86844a8cd56597d0c764fde", size = 18366, upload-time = "2025-12-11T13:32:20.2Z" },
+    { url = "https://files.pythonhosted.org/packages/e6/d6/0f30d38120a949aef70528f845bf539f80df62abb4b8e62fdf69c2b6df5a/opentelemetry_exporter_otlp_proto_common-1.45.2-py3-none-any.whl", hash = "sha256:af483b24217028892f017096731b794b196b785025d2e6808874720fd0b05a80", size = 15392, upload-time = "2026-10-29T17:29:17.913Z" },
 ]
 
 [[package]]
 name = "opentelemetry-exporter-otlp-proto-grpc"
-version = "1.39.1"
+version = "1.45.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "googleapis-common-protos" },
     { name = "grpcio" },
     { name = "opentelemetry-api" },
+    { name = "opentelemetry-exporter-otlp-common" },
     { name = "opentelemetry-exporter-otlp-proto-common" },
     { name = "opentelemetry-proto" },
     { name = "opentelemetry-sdk" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/53/48/b329fed2c610c2c32c9366d9dc597202c9d1e58e631c137ba15248d8850f/opentelemetry_exporter_otlp_proto_grpc-1.39.1.tar.gz", hash = "sha256:772eb1c9287485d625e4dbe9c879898e5253fea111d9181140f51291b5fec3ad", size = 24650, upload-time = "2025-12-11T13:32:41.429Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/46/2c/996861b327ddde01d3c0971582ebcd3f01a376acc720f7b0cb5274df4b70/opentelemetry_exporter_otlp_proto_grpc-1.45.2.tar.gz", hash = "sha256:9e4a6490ca7711479fec7c519425bc09808abbc9a2a1775528edecf200d19a5a", size = 25995, upload-time = "2026-10-29T17:29:45.2Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/81/a3/cc9b66575bd6597b98b886a2067eea2693408d2d5f39dad9ab7fc264f5f3/opentelemetry_exporter_otlp_proto_grpc-1.39.1-py3-none-any.whl", hash = "sha256:fa1c136a05c7e9b4c09f739469cbdb927ea20b34088ab1d959a849b5cc589c18", size = 19766, upload-time = "2025-12-11T13:32:21.027Z" },
+    { url = "https://files.pythonhosted.org/packages/e8/48/14301cac3d106e795eef7e89e191489f086b4e5ad26e47c9635a198e95f4/opentelemetry_exporter_otlp_proto_grpc-1.45.2-py3-none-any.whl", hash = "sha256:8a48d60835e90536846bd82de487bfbd81bccb5a1b3d0fb82edeea17db07395c", size = 19490, upload-time = "2026-10-29T17:29:18.934Z" },
 ]
 
 [[package]]
 name = "opentelemetry-exporter-otlp-proto-http"
-version = "1.39.1"
+version = "1.45.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "googleapis-common-protos" },
     { name = "opentelemetry-api" },
+    { name = "opentelemetry-exporter-http-transport", extra = ["requests"] },
+    { name = "opentelemetry-exporter-otlp-common" },
     { name = "opentelemetry-exporter-otlp-proto-common" },
     { name = "opentelemetry-proto" },
     { name = "opentelemetry-sdk" },
     { name = "requests" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/80/04/2a08fa9c0214ae38880df01e8bfae12b067ec0793446578575e5080d6545/opentelemetry_exporter_otlp_proto_http-1.39.1.tar.gz", hash = "sha256:31bdab9745c709ce90a49a0624c2bd445d31a28ba34275951a6a362d16a0b9cb", size = 17288, upload-time = "2025-12-11T13:32:42.029Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/db/07/b7b01ecb69d02f540e679a9e36f7413d081f225bbbed4469d212ada10bb7/opentelemetry_exporter_otlp_proto_http-1.45.2.tar.gz", hash = "sha256:5984a3fb46bc4628e4e2b85d4a6e72637e03962aae6cf372791137768a4ad939", size = 28843, upload-time = "2026-10-29T17:29:46.15Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/95/f1/b27d3e2e003cd9a3592c43d099d2ed8d0a947c15281bf8463a256db0b46c/opentelemetry_exporter_otlp_proto_http-1.39.1-py3-none-any.whl", hash = "sha256:d9f5207183dd752a412c4cd564ca8875ececba13be6e9c6c370ffb752fd59985", size = 19641, upload-time = "2025-12-11T13:32:22.248Z" },
+    { url = "https://files.pythonhosted.org/packages/32/65/f64d7d2450217e2989714e1dee15e19bf79a77a313387abac0cac77bc10e/opentelemetry_exporter_otlp_proto_http-1.45.2-py3-none-any.whl", hash = "sha256:6e4d025138829d0ee57946930c2ccad6491ad4d92a958e9c7eea69278fe60cfc", size = 22180, upload-time = "2026-10-29T17:29:20.154Z" },
 ]
 
 [[package]]
 name = "opentelemetry-instrumentation"
-version = "0.60b1"
+version = "0.66b2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "opentelemetry-api" },
@@ -3555,71 +3620,62 @@ dependencies = [
     { name = "packaging" },
     { name = "wrapt" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/41/0f/7e6b713ac117c1f5e4e3300748af699b9902a2e5e34c9cf443dde25a01fa/opentelemetry_instrumentation-0.60b1.tar.gz", hash = "sha256:57ddc7974c6eb35865af0426d1a17132b88b2ed8586897fee187fd5b8944bd6a", size = 31706, upload-time = "2025-12-11T13:36:42.515Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/76/b9/46a136199fa6928eecefec8418867a460d94f01c608a85d22bd2ed4e8d48/opentelemetry_instrumentation-0.66b2.tar.gz", hash = "sha256:02b094150e53b76f5906d75e628dbb3833bbc6e62fa109b5c7ba0c081865e923", size = 43305, upload-time = "2026-10-29T17:38:11.618Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/77/d2/6788e83c5c86a2690101681aeef27eeb2a6bf22df52d3f263a22cee20915/opentelemetry_instrumentation-0.60b1-py3-none-any.whl", hash = "sha256:04480db952b48fb1ed0073f822f0ee26012b7be7c3eac1a3793122737c78632d", size = 33096, upload-time = "2025-12-11T13:35:33.067Z" },
+    { url = "https://files.pythonhosted.org/packages/3b/41/014d40e2b08a5d9d9058ed4967ad992657c203ce0c292ded97364ee7b82a/opentelemetry_instrumentation-0.66b2-py3-none-any.whl", hash = "sha256:fa9ccfdab147a14af8107d19ef0a7b5015675273c5adced7a1fc38f28b42ec4c", size = 36902, upload-time = "2026-10-29T17:37:06.994Z" },
 ]
 
 [[package]]
 name = "opentelemetry-instrumentation-threading"
-version = "0.60b1"
+version = "0.66b2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "opentelemetry-api" },
     { name = "opentelemetry-instrumentation" },
     { name = "wrapt" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9b/0a/e36123ec4c0910a3936b92982545a53e9bca5b26a28df06883751a783f84/opentelemetry_instrumentation_threading-0.60b1.tar.gz", hash = "sha256:20b18a68abe5801fa9474336b7c27487d4af3e00b66f6a8734e4fdd75c8b0b43", size = 8768, upload-time = "2025-12-11T13:37:16.29Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/8c/bc/7e342fed05def315771aca1e7c4f1ab9efc7bf31da6775a890d965888f2a/opentelemetry_instrumentation_threading-0.66b2.tar.gz", hash = "sha256:512e0d4b568eff36ca15a977b507ddc1e64a38f93dbcafa4e701b3555b066991", size = 9032, upload-time = "2026-10-29T17:38:48.386Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c7/a3/448738b927bcc1843ace7d4ed55dd54441a71363075eeeee89c5944dd740/opentelemetry_instrumentation_threading-0.60b1-py3-none-any.whl", hash = "sha256:92a52a60fee5e32bc6aa8f5acd749b15691ad0bc4457a310f5736b76a6d9d1de", size = 9312, upload-time = "2025-12-11T13:36:28.434Z" },
+    { url = "https://files.pythonhosted.org/packages/36/e3/667156215ae69ec6290573da351365e4787f09f89a9b9304d1e5248f491a/opentelemetry_instrumentation_threading-0.66b2-py3-none-any.whl", hash = "sha256:647480ef889595d577fea66d0cfcec395cf5d89888bbe05ca9919355797c85a3", size = 8491, upload-time = "2026-10-29T17:37:57.742Z" },
 ]
 
 [[package]]
 name = "opentelemetry-proto"
-version = "1.39.1"
+version = "1.45.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "protobuf" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/49/1d/f25d76d8260c156c40c97c9ed4511ec0f9ce353f8108ca6e7561f82a06b2/opentelemetry_proto-1.39.1.tar.gz", hash = "sha256:6c8e05144fc0d3ed4d22c2289c6b126e03bcd0e6a7da0f16cedd2e1c2772e2c8", size = 46152, upload-time = "2025-12-11T13:32:48.681Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/24/9c/1aa4ce60e9bc72af20dc49c92cc0566825092d92b3d6a277439fb5fb7c01/opentelemetry_proto-1.45.2.tar.gz", hash = "sha256:bd8d23cf770605b0af9b7be2071d26a464fea289d35429abfd2a66226114ad64", size = 46486, upload-time = "2026-10-29T17:29:53.007Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/51/95/b40c96a7b5203005a0b03d8ce8cd212ff23f1793d5ba289c87a097571b18/opentelemetry_proto-1.39.1-py3-none-any.whl", hash = "sha256:22cdc78efd3b3765d09e68bfbd010d4fc254c9818afd0b6b423387d9dee46007", size = 72535, upload-time = "2025-12-11T13:32:33.866Z" },
+    { url = "https://files.pythonhosted.org/packages/7e/0d/a0b8f2b9efe2ec1abdf639d3696db9b1563ebeb11d91aac08ba7341e9122/opentelemetry_proto-1.45.2-py3-none-any.whl", hash = "sha256:03a7ca1b43f89fd5b965d5975902bb2515c0c86e2428b456836e9a6149c6235a", size = 72484, upload-time = "2026-10-29T17:29:31.403Z" },
 ]
 
 [[package]]
 name = "opentelemetry-sdk"
-version = "1.39.1"
+version = "1.45.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "opentelemetry-api" },
     { name = "opentelemetry-semantic-conventions" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/eb/fb/c76080c9ba07e1e8235d24cdcc4d125ef7aa3edf23eb4e497c2e50889adc/opentelemetry_sdk-1.39.1.tar.gz", hash = "sha256:cf4d4563caf7bff906c9f7967e2be22d0d6b349b908be0d90fb21c8e9c995cc6", size = 171460, upload-time = "2025-12-11T13:32:49.369Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/7b/1a/74a21d4d6969fb8b432ac397e66112a8167a6deb267ea4559dbaf2fe91ef/opentelemetry_sdk-1.45.2.tar.gz", hash = "sha256:7eec4de13dd21ff3a1670dcb0e02079e692736f94d733dfdce5af461d884248d", size = 221705, upload-time = "2026-10-29T17:29:54.685Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/7c/98/e91cf858f203d86f4eccdf763dcf01cf03f1dae80c3750f7e635bfa206b6/opentelemetry_sdk-1.39.1-py3-none-any.whl", hash = "sha256:4d5482c478513ecb0a5d938dcc61394e647066e0cc2676bee9f3af3f3f45f01c", size = 132565, upload-time = "2025-12-11T13:32:35.069Z" },
+    { url = "https://files.pythonhosted.org/packages/9f/a5/9a3b793ef48245f2336a16beb2324c2397dbb3f987cd68942f77cca06156/opentelemetry_sdk-1.45.2-py3-none-any.whl", hash = "sha256:ff974ea70ee4f1d51e2ec152db37c2b626c7bf82bb3f7d86114fd8704e7199c6", size = 141756, upload-time = "2026-10-29T17:29:33.722Z" },
 ]
 
 [[package]]
 name = "opentelemetry-semantic-conventions"
-version = "0.60b1"
+version = "0.66b2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "opentelemetry-api" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/91/df/553f93ed38bf22f4b999d9be9c185adb558982214f33eae539d3b5cd0858/opentelemetry_semantic_conventions-0.60b1.tar.gz", hash = "sha256:87c228b5a0669b748c76d76df6c364c369c28f1c465e50f661e39737e84bc953", size = 137935, upload-time = "2025-12-11T13:32:50.487Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/37/3f/50f95972b50e8e353f5b9342034c9cd17730f1956f009ce6a3fbbd89f9ce/opentelemetry_semantic_conventions-0.66b2.tar.gz", hash = "sha256:7da5f1a5dc4383eb66711d4d3d3e71824d9403ac1559fea021cc103c1a4c4976", size = 150246, upload-time = "2026-10-29T17:29:55.682Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/7a/5e/5958555e09635d09b75de3c4f8b9cae7335ca545d77392ffe7331534c402/opentelemetry_semantic_conventions-0.60b1-py3-none-any.whl", hash = "sha256:9fa8c8b0c110da289809292b0591220d3a7b53c1526a23021e977d68597893fb", size = 219982, upload-time = "2025-12-11T13:32:36.955Z" },
-]
-
-[[package]]
-name = "opentelemetry-semantic-conventions-ai"
-version = "0.4.13"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/ba/e6/40b59eda51ac47009fb47afcdf37c6938594a0bd7f3b9fadcbc6058248e3/opentelemetry_semantic_conventions_ai-0.4.13.tar.gz", hash = "sha256:94efa9fb4ffac18c45f54a3a338ffeb7eedb7e1bb4d147786e77202e159f0036", size = 5368, upload-time = "2025-08-22T10:14:17.387Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/35/b5/cf25da2218910f0d6cdf7f876a06bed118c4969eacaf60a887cbaef44f44/opentelemetry_semantic_conventions_ai-0.4.13-py3-none-any.whl", hash = "sha256:883a30a6bb5deaec0d646912b5f9f6dcbb9f6f72557b73d0f2560bf25d13e2d5", size = 6080, upload-time = "2025-08-22T10:14:16.477Z" },
+    { url = "https://files.pythonhosted.org/packages/67/bd/6bf33ed31521c565931c037e9e81bac47c1acb000e850c6e24220e2a0c00/opentelemetry_semantic_conventions-0.66b2-py3-none-any.whl", hash = "sha256:4cbe61e5f9275d57ab31708446e7938ef4291ebbe6a7fca6f7a629c5acae87d8", size = 206280, upload-time = "2026-10-29T17:29:35.062Z" },
 ]
 
 [[package]]
@@ -4361,165 +4417,166 @@ version = "12.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pyobjc-core" },
-    { name = "pyobjc-framework-accessibility", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-accounts", marker = "platform_release >= '12.0'" },
+    { name = "pyobjc-framework-accessibility", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-accounts", marker = "(platform_release >= '12.0' and sys_platform != 'darwin') or (platform_release >= '12' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-addressbook" },
-    { name = "pyobjc-framework-adservices", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-adsupport", marker = "platform_release >= '18.0'" },
+    { name = "pyobjc-framework-adservices", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-adsupport", marker = "(platform_release >= '18.0' and sys_platform != 'darwin') or (platform_release >= '18' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-applescriptkit" },
-    { name = "pyobjc-framework-applescriptobjc", marker = "platform_release >= '10.0'" },
+    { name = "pyobjc-framework-applescriptobjc", marker = "(platform_release >= '10.0' and sys_platform != 'darwin') or (platform_release >= '10' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-applicationservices" },
-    { name = "pyobjc-framework-apptrackingtransparency", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-arkit", marker = "platform_release >= '25.0'" },
-    { name = "pyobjc-framework-audiovideobridging", marker = "platform_release >= '12.0'" },
-    { name = "pyobjc-framework-authenticationservices", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-automaticassessmentconfiguration", marker = "platform_release >= '19.0'" },
+    { name = "pyobjc-framework-apptrackingtransparency", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-arkit", marker = "(platform_release >= '25.0' and sys_platform != 'darwin') or (platform_release >= '25' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-audiovideobridging", marker = "(platform_release >= '12.0' and sys_platform != 'darwin') or (platform_release >= '12' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-authenticationservices", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-automaticassessmentconfiguration", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-automator" },
-    { name = "pyobjc-framework-avfoundation", marker = "platform_release >= '11.0'" },
-    { name = "pyobjc-framework-avkit", marker = "platform_release >= '13.0'" },
-    { name = "pyobjc-framework-avrouting", marker = "platform_release >= '22.0'" },
-    { name = "pyobjc-framework-backgroundassets", marker = "platform_release >= '22.0'" },
-    { name = "pyobjc-framework-browserenginekit", marker = "platform_release >= '23.4'" },
-    { name = "pyobjc-framework-businesschat", marker = "platform_release >= '18.0'" },
-    { name = "pyobjc-framework-calendarstore", marker = "platform_release >= '9.0'" },
-    { name = "pyobjc-framework-callkit", marker = "platform_release >= '20.0'" },
+    { name = "pyobjc-framework-avfoundation", marker = "(platform_release >= '11.0' and sys_platform != 'darwin') or (platform_release >= '11' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-avkit", marker = "(platform_release >= '13.0' and sys_platform != 'darwin') or (platform_release >= '13' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-avrouting", marker = "(platform_release >= '22.0' and sys_platform != 'darwin') or (platform_release >= '22' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-backgroundassets", marker = "(platform_release >= '22.0' and sys_platform != 'darwin') or (platform_release >= '22' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-browserenginekit", marker = "(platform_release >= '23.4' and sys_platform != 'darwin') or (platform_release >= '23.4' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-businesschat", marker = "(platform_release >= '18.0' and sys_platform != 'darwin') or (platform_release >= '18' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-calendarstore", marker = "(platform_release >= '9.0' and sys_platform != 'darwin') or (platform_release >= '9' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-callkit", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-carbon" },
     { name = "pyobjc-framework-cfnetwork" },
-    { name = "pyobjc-framework-cinematic", marker = "platform_release >= '23.0'" },
-    { name = "pyobjc-framework-classkit", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-cloudkit", marker = "platform_release >= '14.0'" },
+    { name = "pyobjc-framework-cinematic", marker = "(platform_release >= '23.0' and sys_platform != 'darwin') or (platform_release >= '23' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-classkit", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-cloudkit", marker = "(platform_release >= '14.0' and sys_platform != 'darwin') or (platform_release >= '14' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-cocoa" },
-    { name = "pyobjc-framework-collaboration", marker = "platform_release >= '9.0'" },
-    { name = "pyobjc-framework-colorsync", marker = "platform_release >= '17.0'" },
-    { name = "pyobjc-framework-compositorservices", marker = "platform_release >= '25.0'" },
-    { name = "pyobjc-framework-contacts", marker = "platform_release >= '15.0'" },
-    { name = "pyobjc-framework-contactsui", marker = "platform_release >= '15.0'" },
+    { name = "pyobjc-framework-collaboration", marker = "(platform_release >= '9.0' and sys_platform != 'darwin') or (platform_release >= '9' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-colorsync", marker = "(platform_release >= '17.0' and sys_platform != 'darwin') or (platform_release >= '17' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-compositorservices", marker = "(platform_release >= '25.0' and sys_platform != 'darwin') or (platform_release >= '25' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-contacts", marker = "(platform_release >= '15.0' and sys_platform != 'darwin') or (platform_release >= '15' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-contactsui", marker = "(platform_release >= '15.0' and sys_platform != 'darwin') or (platform_release >= '15' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-coreaudio" },
     { name = "pyobjc-framework-coreaudiokit" },
-    { name = "pyobjc-framework-corebluetooth", marker = "platform_release >= '14.0'" },
+    { name = "pyobjc-framework-corebluetooth", marker = "(platform_release >= '14.0' and sys_platform != 'darwin') or (platform_release >= '14' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-coredata" },
-    { name = "pyobjc-framework-corehaptics", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-corelocation", marker = "platform_release >= '10.0'" },
-    { name = "pyobjc-framework-coremedia", marker = "platform_release >= '11.0'" },
-    { name = "pyobjc-framework-coremediaio", marker = "platform_release >= '11.0'" },
+    { name = "pyobjc-framework-corehaptics", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-corelocation", marker = "(platform_release >= '10.0' and sys_platform != 'darwin') or (platform_release >= '10' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-coremedia", marker = "(platform_release >= '11.0' and sys_platform != 'darwin') or (platform_release >= '11' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-coremediaio", marker = "(platform_release >= '11.0' and sys_platform != 'darwin') or (platform_release >= '11' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-coremidi" },
-    { name = "pyobjc-framework-coreml", marker = "platform_release >= '17.0'" },
-    { name = "pyobjc-framework-coremotion", marker = "platform_release >= '19.0'" },
+    { name = "pyobjc-framework-coreml", marker = "(platform_release >= '17.0' and sys_platform != 'darwin') or (platform_release >= '17' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-coremotion", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-coreservices" },
-    { name = "pyobjc-framework-corespotlight", marker = "platform_release >= '17.0'" },
+    { name = "pyobjc-framework-corespotlight", marker = "(platform_release >= '17.0' and sys_platform != 'darwin') or (platform_release >= '17' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-coretext" },
-    { name = "pyobjc-framework-corewlan", marker = "platform_release >= '10.0'" },
-    { name = "pyobjc-framework-cryptotokenkit", marker = "platform_release >= '14.0'" },
-    { name = "pyobjc-framework-datadetection", marker = "platform_release >= '21.0'" },
-    { name = "pyobjc-framework-devicecheck", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-devicediscoveryextension", marker = "platform_release >= '24.0'" },
-    { name = "pyobjc-framework-dictionaryservices", marker = "platform_release >= '9.0'" },
+    { name = "pyobjc-framework-corewlan", marker = "(platform_release >= '10.0' and sys_platform != 'darwin') or (platform_release >= '10' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-cryptotokenkit", marker = "(platform_release >= '14.0' and sys_platform != 'darwin') or (platform_release >= '14' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-datadetection", marker = "(platform_release >= '21.0' and sys_platform != 'darwin') or (platform_release >= '21' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-devicecheck", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-devicediscoveryextension", marker = "(platform_release >= '24.0' and sys_platform != 'darwin') or (platform_release >= '24' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-dictionaryservices", marker = "(platform_release >= '9.0' and sys_platform != 'darwin') or (platform_release >= '9' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-discrecording" },
     { name = "pyobjc-framework-discrecordingui" },
     { name = "pyobjc-framework-diskarbitration" },
     { name = "pyobjc-framework-dvdplayback" },
-    { name = "pyobjc-framework-eventkit", marker = "platform_release >= '12.0'" },
+    { name = "pyobjc-framework-eventkit", marker = "(platform_release >= '12.0' and sys_platform != 'darwin') or (platform_release >= '12' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-exceptionhandling" },
-    { name = "pyobjc-framework-executionpolicy", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-extensionkit", marker = "platform_release >= '22.0'" },
-    { name = "pyobjc-framework-externalaccessory", marker = "platform_release >= '17.0'" },
-    { name = "pyobjc-framework-fileprovider", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-fileproviderui", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-findersync", marker = "platform_release >= '14.0'" },
-    { name = "pyobjc-framework-fsevents", marker = "platform_release >= '9.0'" },
-    { name = "pyobjc-framework-fskit", marker = "platform_release >= '24.4'" },
-    { name = "pyobjc-framework-gamecenter", marker = "platform_release >= '12.0'" },
-    { name = "pyobjc-framework-gamecontroller", marker = "platform_release >= '13.0'" },
-    { name = "pyobjc-framework-gamekit", marker = "platform_release >= '12.0'" },
-    { name = "pyobjc-framework-gameplaykit", marker = "platform_release >= '15.0'" },
-    { name = "pyobjc-framework-gamesave", marker = "platform_release >= '25.0'" },
-    { name = "pyobjc-framework-healthkit", marker = "platform_release >= '22.0'" },
-    { name = "pyobjc-framework-imagecapturecore", marker = "platform_release >= '10.0'" },
-    { name = "pyobjc-framework-inputmethodkit", marker = "platform_release >= '9.0'" },
+    { name = "pyobjc-framework-executionpolicy", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-extensionkit", marker = "(platform_release >= '22.0' and sys_platform != 'darwin') or (platform_release >= '22' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-externalaccessory", marker = "(platform_release >= '17.0' and sys_platform != 'darwin') or (platform_release >= '17' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-fileprovider", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-fileproviderui", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-findersync", marker = "(platform_release >= '14.0' and sys_platform != 'darwin') or (platform_release >= '14' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-fsevents", marker = "(platform_release >= '9.0' and sys_platform != 'darwin') or (platform_release >= '9' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-fskit", marker = "(platform_release >= '24.4' and sys_platform != 'darwin') or (platform_release >= '24.4' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-gamecenter", marker = "(platform_release >= '12.0' and sys_platform != 'darwin') or (platform_release >= '12' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-gamecontroller", marker = "(platform_release >= '13.0' and sys_platform != 'darwin') or (platform_release >= '13' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-gamekit", marker = "(platform_release >= '12.0' and sys_platform != 'darwin') or (platform_release >= '12' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-gameplaykit", marker = "(platform_release >= '15.0' and sys_platform != 'darwin') or (platform_release >= '15' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-gamesave", marker = "(platform_release >= '25.0' and sys_platform != 'darwin') or (platform_release >= '25' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-healthkit", marker = "(platform_release >= '22.0' and sys_platform != 'darwin') or (platform_release >= '22' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-imagecapturecore", marker = "(platform_release >= '10.0' and sys_platform != 'darwin') or (platform_release >= '10' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-inputmethodkit", marker = "(platform_release >= '9.0' and sys_platform != 'darwin') or (platform_release >= '9' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-installerplugins" },
-    { name = "pyobjc-framework-instantmessage", marker = "platform_release >= '9.0'" },
-    { name = "pyobjc-framework-intents", marker = "platform_release >= '16.0'" },
-    { name = "pyobjc-framework-intentsui", marker = "platform_release >= '21.0'" },
+    { name = "pyobjc-framework-instantmessage", marker = "(platform_release >= '9.0' and sys_platform != 'darwin') or (platform_release >= '9' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-intents", marker = "(platform_release >= '16.0' and sys_platform != 'darwin') or (platform_release >= '16' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-intentsui", marker = "(platform_release >= '21.0' and sys_platform != 'darwin') or (platform_release >= '21' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-iobluetooth" },
     { name = "pyobjc-framework-iobluetoothui" },
-    { name = "pyobjc-framework-iosurface", marker = "platform_release >= '10.0'" },
-    { name = "pyobjc-framework-ituneslibrary", marker = "platform_release >= '10.0'" },
-    { name = "pyobjc-framework-kernelmanagement", marker = "platform_release >= '20.0'" },
+    { name = "pyobjc-framework-iosurface", marker = "(platform_release >= '10.0' and sys_platform != 'darwin') or (platform_release >= '10' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-ituneslibrary", marker = "(platform_release >= '10.0' and sys_platform != 'darwin') or (platform_release >= '10' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-kernelmanagement", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-latentsemanticmapping" },
     { name = "pyobjc-framework-launchservices" },
-    { name = "pyobjc-framework-libdispatch", marker = "platform_release >= '12.0'" },
-    { name = "pyobjc-framework-libxpc", marker = "platform_release >= '12.0'" },
-    { name = "pyobjc-framework-linkpresentation", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-localauthentication", marker = "platform_release >= '14.0'" },
-    { name = "pyobjc-framework-localauthenticationembeddedui", marker = "platform_release >= '21.0'" },
-    { name = "pyobjc-framework-mailkit", marker = "platform_release >= '21.0'" },
-    { name = "pyobjc-framework-mapkit", marker = "platform_release >= '13.0'" },
-    { name = "pyobjc-framework-mediaaccessibility", marker = "platform_release >= '13.0'" },
-    { name = "pyobjc-framework-mediaextension", marker = "platform_release >= '24.0'" },
-    { name = "pyobjc-framework-medialibrary", marker = "platform_release >= '13.0'" },
-    { name = "pyobjc-framework-mediaplayer", marker = "platform_release >= '16.0'" },
-    { name = "pyobjc-framework-mediatoolbox", marker = "platform_release >= '13.0'" },
-    { name = "pyobjc-framework-metal", marker = "platform_release >= '15.0'" },
-    { name = "pyobjc-framework-metalfx", marker = "platform_release >= '22.0'" },
-    { name = "pyobjc-framework-metalkit", marker = "platform_release >= '15.0'" },
-    { name = "pyobjc-framework-metalperformanceshaders", marker = "platform_release >= '17.0'" },
-    { name = "pyobjc-framework-metalperformanceshadersgraph", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-metrickit", marker = "platform_release >= '21.0'" },
-    { name = "pyobjc-framework-mlcompute", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-modelio", marker = "platform_release >= '15.0'" },
-    { name = "pyobjc-framework-multipeerconnectivity", marker = "platform_release >= '14.0'" },
-    { name = "pyobjc-framework-naturallanguage", marker = "platform_release >= '18.0'" },
-    { name = "pyobjc-framework-netfs", marker = "platform_release >= '10.0'" },
-    { name = "pyobjc-framework-network", marker = "platform_release >= '18.0'" },
-    { name = "pyobjc-framework-networkextension", marker = "platform_release >= '15.0'" },
-    { name = "pyobjc-framework-notificationcenter", marker = "platform_release >= '14.0'" },
-    { name = "pyobjc-framework-opendirectory", marker = "platform_release >= '10.0'" },
+    { name = "pyobjc-framework-libdispatch", marker = "(platform_release >= '12.0' and sys_platform != 'darwin') or (platform_release >= '12' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-libxpc", marker = "(platform_release >= '12.0' and sys_platform != 'darwin') or (platform_release >= '12' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-linkpresentation", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-localauthentication", marker = "(platform_release >= '14.0' and sys_platform != 'darwin') or (platform_release >= '14' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-localauthenticationembeddedui", marker = "(platform_release >= '21.0' and sys_platform != 'darwin') or (platform_release >= '21' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-mailkit", marker = "(platform_release >= '21.0' and sys_platform != 'darwin') or (platform_release >= '21' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-mapkit", marker = "(platform_release >= '13.0' and sys_platform != 'darwin') or (platform_release >= '13' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-mediaaccessibility", marker = "(platform_release >= '13.0' and sys_platform != 'darwin') or (platform_release >= '13' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-mediaextension", marker = "(platform_release >= '24.0' and sys_platform != 'darwin') or (platform_release >= '24' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-medialibrary", marker = "(platform_release >= '13.0' and sys_platform != 'darwin') or (platform_release >= '13' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-mediaplayer", marker = "(platform_release >= '16.0' and sys_platform != 'darwin') or (platform_release >= '16' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-mediatoolbox", marker = "(platform_release >= '13.0' and sys_platform != 'darwin') or (platform_release >= '13' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-metal", marker = "(platform_release >= '15.0' and sys_platform != 'darwin') or (platform_release >= '15' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-metalfx", marker = "(platform_release >= '22.0' and sys_platform != 'darwin') or (platform_release >= '22' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-metalkit", marker = "(platform_release >= '15.0' and sys_platform != 'darwin') or (platform_release >= '15' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-metalperformanceshaders", marker = "(platform_release >= '17.0' and sys_platform != 'darwin') or (platform_release >= '17' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-metalperformanceshadersgraph", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-metrickit", marker = "(platform_release >= '21.0' and sys_platform != 'darwin') or (platform_release >= '21' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-mlcompute", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-modelio", marker = "(platform_release >= '15.0' and sys_platform != 'darwin') or (platform_release >= '15' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-multipeerconnectivity", marker = "(platform_release >= '14.0' and sys_platform != 'darwin') or (platform_release >= '14' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-naturallanguage", marker = "(platform_release >= '18.0' and sys_platform != 'darwin') or (platform_release >= '18' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-netfs", marker = "(platform_release >= '10.0' and sys_platform != 'darwin') or (platform_release >= '10' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-network", marker = "(platform_release >= '18.0' and sys_platform != 'darwin') or (platform_release >= '18' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-networkextension", marker = "(platform_release >= '15.0' and sys_platform != 'darwin') or (platform_release >= '15' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-notificationcenter", marker = "(platform_release >= '14.0' and sys_platform != 'darwin') or (platform_release >= '14' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-opendirectory", marker = "(platform_release >= '10.0' and sys_platform != 'darwin') or (platform_release >= '10' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-osakit" },
-    { name = "pyobjc-framework-oslog", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-passkit", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-pencilkit", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-phase", marker = "platform_release >= '21.0'" },
-    { name = "pyobjc-framework-photos", marker = "platform_release >= '15.0'" },
-    { name = "pyobjc-framework-photosui", marker = "platform_release >= '15.0'" },
+    { name = "pyobjc-framework-oslog", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-passkit", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-pencilkit", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-phase", marker = "(platform_release >= '21.0' and sys_platform != 'darwin') or (platform_release >= '21' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-photos", marker = "(platform_release >= '15.0' and sys_platform != 'darwin') or (platform_release >= '15' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-photosui", marker = "(platform_release >= '15.0' and sys_platform != 'darwin') or (platform_release >= '15' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-preferencepanes" },
-    { name = "pyobjc-framework-pushkit", marker = "platform_release >= '19.0'" },
+    { name = "pyobjc-framework-pubsub", marker = "platform_release >= '9' and platform_release < '18' and sys_platform == 'darwin'" },
+    { name = "pyobjc-framework-pushkit", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-quartz" },
-    { name = "pyobjc-framework-quicklookthumbnailing", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-replaykit", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-safariservices", marker = "platform_release >= '16.0'" },
-    { name = "pyobjc-framework-safetykit", marker = "platform_release >= '22.0'" },
-    { name = "pyobjc-framework-scenekit", marker = "platform_release >= '11.0'" },
-    { name = "pyobjc-framework-screencapturekit", marker = "platform_release >= '21.4'" },
+    { name = "pyobjc-framework-quicklookthumbnailing", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-replaykit", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-safariservices", marker = "(platform_release >= '16.0' and sys_platform != 'darwin') or (platform_release >= '16' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-safetykit", marker = "(platform_release >= '22.0' and sys_platform != 'darwin') or (platform_release >= '22' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-scenekit", marker = "(platform_release >= '11.0' and sys_platform != 'darwin') or (platform_release >= '11' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-screencapturekit", marker = "(platform_release >= '21.4' and sys_platform != 'darwin') or (platform_release >= '21.4' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-screensaver" },
-    { name = "pyobjc-framework-screentime", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-scriptingbridge", marker = "platform_release >= '9.0'" },
+    { name = "pyobjc-framework-screentime", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-scriptingbridge", marker = "(platform_release >= '9.0' and sys_platform != 'darwin') or (platform_release >= '9' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-searchkit" },
     { name = "pyobjc-framework-security" },
     { name = "pyobjc-framework-securityfoundation" },
     { name = "pyobjc-framework-securityinterface" },
-    { name = "pyobjc-framework-securityui", marker = "platform_release >= '24.4'" },
-    { name = "pyobjc-framework-sensitivecontentanalysis", marker = "platform_release >= '23.0'" },
-    { name = "pyobjc-framework-servicemanagement", marker = "platform_release >= '10.0'" },
-    { name = "pyobjc-framework-sharedwithyou", marker = "platform_release >= '22.0'" },
-    { name = "pyobjc-framework-sharedwithyoucore", marker = "platform_release >= '22.0'" },
-    { name = "pyobjc-framework-shazamkit", marker = "platform_release >= '21.0'" },
-    { name = "pyobjc-framework-social", marker = "platform_release >= '12.0'" },
-    { name = "pyobjc-framework-soundanalysis", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-speech", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-spritekit", marker = "platform_release >= '13.0'" },
-    { name = "pyobjc-framework-storekit", marker = "platform_release >= '11.0'" },
-    { name = "pyobjc-framework-symbols", marker = "platform_release >= '23.0'" },
+    { name = "pyobjc-framework-securityui", marker = "(platform_release >= '24.4' and sys_platform != 'darwin') or (platform_release >= '24.4' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-sensitivecontentanalysis", marker = "(platform_release >= '23.0' and sys_platform != 'darwin') or (platform_release >= '23' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-servicemanagement", marker = "(platform_release >= '10.0' and sys_platform != 'darwin') or (platform_release >= '10' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-sharedwithyou", marker = "(platform_release >= '22.0' and sys_platform != 'darwin') or (platform_release >= '22' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-sharedwithyoucore", marker = "(platform_release >= '22.0' and sys_platform != 'darwin') or (platform_release >= '22' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-shazamkit", marker = "(platform_release >= '21.0' and sys_platform != 'darwin') or (platform_release >= '21' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-social", marker = "(platform_release >= '12.0' and sys_platform != 'darwin') or (platform_release >= '12' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-soundanalysis", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-speech", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-spritekit", marker = "(platform_release >= '13.0' and sys_platform != 'darwin') or (platform_release >= '13' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-storekit", marker = "(platform_release >= '11.0' and sys_platform != 'darwin') or (platform_release >= '11' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-symbols", marker = "(platform_release >= '23.0' and sys_platform != 'darwin') or (platform_release >= '23' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-syncservices" },
     { name = "pyobjc-framework-systemconfiguration" },
-    { name = "pyobjc-framework-systemextensions", marker = "platform_release >= '19.0'" },
-    { name = "pyobjc-framework-threadnetwork", marker = "platform_release >= '22.0'" },
-    { name = "pyobjc-framework-uniformtypeidentifiers", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-usernotifications", marker = "platform_release >= '18.0'" },
-    { name = "pyobjc-framework-usernotificationsui", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-videosubscriberaccount", marker = "platform_release >= '18.0'" },
-    { name = "pyobjc-framework-videotoolbox", marker = "platform_release >= '12.0'" },
-    { name = "pyobjc-framework-virtualization", marker = "platform_release >= '20.0'" },
-    { name = "pyobjc-framework-vision", marker = "platform_release >= '17.0'" },
+    { name = "pyobjc-framework-systemextensions", marker = "(platform_release >= '19.0' and sys_platform != 'darwin') or (platform_release >= '19' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-threadnetwork", marker = "(platform_release >= '22.0' and sys_platform != 'darwin') or (platform_release >= '22' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-uniformtypeidentifiers", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-usernotifications", marker = "(platform_release >= '18.0' and sys_platform != 'darwin') or (platform_release >= '18' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-usernotificationsui", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-videosubscriberaccount", marker = "(platform_release >= '18.0' and sys_platform != 'darwin') or (platform_release >= '18' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-videotoolbox", marker = "(platform_release >= '12.0' and sys_platform != 'darwin') or (platform_release >= '12' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-virtualization", marker = "(platform_release >= '20.0' and sys_platform != 'darwin') or (platform_release >= '20' and sys_platform == 'darwin')" },
+    { name = "pyobjc-framework-vision", marker = "(platform_release >= '17.0' and sys_platform != 'darwin') or (platform_release >= '17' and sys_platform == 'darwin')" },
     { name = "pyobjc-framework-webkit" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/17/06/d77639ba166cc09aed2d32ae204811b47bc5d40e035cdc9bff7fff72ec5f/pyobjc-12.1.tar.gz", hash = "sha256:686d6db3eb3182fac9846b8ce3eedf4c7d2680b21b8b8d6e6df054a17e92a12d", size = 11345, upload-time = "2025-11-14T10:07:28.155Z" }
@@ -6286,6 +6343,19 @@ wheels = [
 ]
 
 [[package]]
+name = "pyobjc-framework-pubsub"
+version = "12.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyobjc-core" },
+    { name = "pyobjc-framework-cocoa" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/85/b6/199b873535d523cda4cbd107859055c7b926950d67fd24e435f524d9c467/pyobjc_framework_pubsub-12.1.tar.gz", hash = "sha256:dc9dea4b2e82eb8e3370b399587b6b3bb1a8b9f9361178a83d608ec82cac0d89", size = 15450, upload-time = "2025-11-14T10:18:55.588Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/53/f1/27bd9c8219857286a50ef53bdd252c0ba8c5908e955dff860c0fca639075/pyobjc_framework_pubsub-12.1-py2.py3-none-any.whl", hash = "sha256:6bf254217645a493edd82090dbe9ab3e4ec97b9d1416a6f126ce3c2f7d7389af", size = 5225, upload-time = "2025-11-14T09:59:05.699Z" },
+]
+
+[[package]]
 name = "pyobjc-framework-pushkit"
 version = "12.1"
 source = { registry = "https://pypi.org/simple" }
@@ -7145,7 +7215,7 @@ name = "pythonnet"
 version = "3.0.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "clr-loader", marker = "sys_platform == 'win32'" },
+    { name = "clr-loader" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/9a/d6/1afd75edd932306ae9bd2c2d961d603dc2b52fcec51b04afea464f1f6646/pythonnet-3.0.5.tar.gz", hash = "sha256:48e43ca463941b3608b32b4e236db92d8d40db4c58a75ace902985f76dac21cf", size = 239212, upload-time = "2024-12-13T08:30:44.393Z" }
 wheels = [
@@ -7632,8 +7702,8 @@ name = "secretstorage"
 version = "3.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cryptography", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
-    { name = "jeepney", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "cryptography" },
+    { name = "jeepney" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz", hash = "sha256:f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be", size = 19884, upload-time = "2025-11-23T19:02:53.191Z" }
 wheels = [
@@ -8420,7 +8490,7 @@ name = "xattr"
 version = "1.3.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cffi", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "cffi" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/08/d5/25f7b19af3a2cb4000cac4f9e5525a40bec79f4f5d0ac9b517c0544586a0/xattr-1.3.0.tar.gz", hash = "sha256:30439fabd7de0787b27e9a6e1d569c5959854cb322f64ce7380fedbfa5035036", size = 17148, upload-time = "2025-10-13T22:16:47.353Z" }
 wheels = [
